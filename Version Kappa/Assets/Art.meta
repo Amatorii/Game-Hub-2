@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: cc69e48174101dd4c882bc03a05c8af8
+=======
+<<<<<<< HEAD:Version Kappa/Assets/Art.meta
+guid: 29b8690b9fa713a41a1d1fe1d30f8cea
+=======
+guid: 61b010ddb45457548be1ed12c27208c1
+>>>>>>> a8512ab2ed48f45675a05f945f0209545cb3f746:Version Kappa/Assets/Fergo.meta
+>>>>>>> a918ae71015840b12334bc252c0248ad8f5d45f0
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
