@@ -14,7 +14,7 @@ public class Player2DController : MonoBehaviour
     float moveInput;
     bool jumpInput = false;
     bool justJumped = false;
-
+    
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +25,7 @@ public class Player2DController : MonoBehaviour
     {
         moveInput = Input.GetAxis("Horizontal");
     }
+
     private void FixedUpdate()
     {
         Vector2 vel = rb.velocity;
