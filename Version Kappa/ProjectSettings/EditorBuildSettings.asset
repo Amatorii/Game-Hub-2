@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Max/Player2DScene.unity
+    guid: 955aff97035509e42b46e2038030612a
   m_configObjects: {}
