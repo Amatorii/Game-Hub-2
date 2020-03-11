@@ -9,7 +9,7 @@ public class PlayerCamera : MonoBehaviour
 
     float rotatePitch;
     float pitchRange = 60.0f;
-
+    float rotateYaw;
 
 
     // Start is called before the first frame update
@@ -31,12 +31,16 @@ public class PlayerCamera : MonoBehaviour
 
     void CameraMovement()
     {
-        float rotateYaw = Input.GetAxis("Mouse X");
-        transform.Rotate(0, rotateYaw, 0);
+        rotateYaw += Input.GetAxis("Mouse X") * mouseSensitivity;
+        rotateYaw = Mathf.Clamp(rotateYaw, -110, 90);
+
+        //transform.Rotate(0, rotateYaw, 0);
 
         rotatePitch += -Input.GetAxis("Mouse Y") * mouseSensitivity;
         rotatePitch = Mathf.Clamp(rotatePitch, -pitchRange, pitchRange);
+
+
         //firstPersonCam.transform.Rotate(rotatePitch, 0, 0);
-        firstPersonCam.transform.localRotation = Quaternion.Euler(rotatePitch, 0, 0);
+        firstPersonCam.transform.localRotation = Quaternion.Euler(rotatePitch, rotateYaw, 0);
     }
 }
