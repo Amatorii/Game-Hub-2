@@ -16,7 +16,7 @@ public class flashlight : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonUp("Fire2"))
+        if (Input.GetButtonUp("Fire2")&&batteryPower > 0)
         {
             FlashLightOn = !FlashLightOn;
             flashlightAsset.gameObject.SetActive(FlashLightOn);
@@ -26,6 +26,9 @@ public class flashlight : MonoBehaviour
         if(FlashLightOn)
         {
             batteryPower -= batteryUsage * Time.deltaTime;
+            if(batteryPower < 0) {
+                flashlightAsset.gameObject.SetActive(false);
+            }
         }
     }
 
