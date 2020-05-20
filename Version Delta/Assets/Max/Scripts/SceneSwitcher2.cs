@@ -10,6 +10,6 @@ public class SceneSwitcher2 : MonoBehaviour
 
     public void GotoMenuScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Monsters");
     }
 }

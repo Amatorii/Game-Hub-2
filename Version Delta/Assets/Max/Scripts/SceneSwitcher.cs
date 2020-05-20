@@ -5,7 +5,7 @@ public class SceneSwitcher : MonoBehaviour
 {
     public void GotoMainScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Monsters");
     }
 
     public void GotoMenuScene()

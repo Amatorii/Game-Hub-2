@@ -11,7 +11,7 @@ public class PlayerCamera : MonoBehaviour
     float pitchRange = 60.0f;
     float rotateYaw;
 
-    Transform movePoint;
+    //Transform movePoint;
     Transform pointToHit;
     public Transform[] locations;
     bool onBed = true;
@@ -25,7 +25,7 @@ public class PlayerCamera : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        movePoint = locations[0];
+        //movePoint = locations[0];
         zones = LayerMask.GetMask("Zones");
         cam = Camera.main;
         anim = GetComponent<Animator>();
@@ -46,7 +46,7 @@ public class PlayerCamera : MonoBehaviour
     void Movement()
     {
         // direction = transform.rotation * direction;
-        transform.position = Vector3.Lerp(transform.position, movePoint.position, 0.1f);
+        //transform.position = Vector3.Lerp(transform.position, movePoint.position, 0.1f);
     }
 
     void SetLocation()

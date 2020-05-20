@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Hamish/Recycled Shit/Hamish/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Hamish/Scenes/Monsters.unity
+    guid: 0823fcfcc0970cd4cbc7dcde1a373fb8
+  - enabled: 0
+    path: Assets/Hamish/Scenes/Hamish Title.unity
+    guid: 354a138cab30c224aba3b76d97ce8c69
+  - enabled: 0
+    path: Assets/Hamish/Scenes/Hamish Death.unity
+    guid: 84e360157746be4498be45991e9e12b3
   m_configObjects: {}
