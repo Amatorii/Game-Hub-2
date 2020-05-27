@@ -11,11 +11,18 @@ namespace TOM
         float currenttime;
         public float Movespeed = 5;
 
+        public override void Init(int lvl)
+        {
+            //Has to deal with Initialising itself
+            level = lvl;
+        }
+
         public override void Tick(float deltaTime)
         {
             Debug.Log("Plooo");
             Moving();
             moving = true;
+            base.Tick(deltaTime);
         }
 
         public void StopMove()
