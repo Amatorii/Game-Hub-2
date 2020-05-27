@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTime: 60
-  textBox: {fileID: 0}
+  textBox: {fileID: 1298179252}
 --- !u!4 &814736372
 Transform:
   m_ObjectHideFlags: 0

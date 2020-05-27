@@ -4970,8 +4970,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 2
-  firstPersonCam: {fileID: 0}
-  locations: []
+  firstPersonCam: {fileID: 1197610848}
+  locations:
+  - {fileID: 518959447}
 --- !u!4 &1888248682
 Transform:
   m_ObjectHideFlags: 0
