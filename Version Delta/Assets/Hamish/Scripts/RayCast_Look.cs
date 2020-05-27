@@ -27,6 +27,7 @@ public class RayCast_Look : MonoBehaviour
             if (Exlamation != null)
             {
                 Exlamation.Seen();
+                Debug.Log("checked");
             }
         }
     }
