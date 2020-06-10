@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/Max/Game Over-Death Screen.unity
     guid: a1d4ab2c185c741468916e785f6073f5
   - enabled: 1
-    path: Assets/Hamish/Recycled Shit/Hamish/SampleScene.unity
+    path: Assets/Hamish/Monsters - v1/Recycled Shit/Hamish/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Hamish/Scenes/Monsters.unity
+    path: Assets/Hamish/Monsters - v1/Scenes/Monsters.unity
     guid: 0823fcfcc0970cd4cbc7dcde1a373fb8
   - enabled: 0
     path: Assets/Hamish/Scenes/Hamish Title.unity

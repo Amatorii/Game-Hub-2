@@ -28,7 +28,7 @@ public class Move : MonoBehaviour
             currenttime -= 1 * Time.deltaTime; //subtracts how long the monster has to wait by the in game time
             if (currenttime <= 0)
             {
-                transform.Translate(Vector3.forward * Time.deltaTime*Movespeed); //makes the monster move foward
+                transform.Translate(Vector3.forward * Time.deltaTime * Movespeed); //makes the monster move foward
             }
         }
 
