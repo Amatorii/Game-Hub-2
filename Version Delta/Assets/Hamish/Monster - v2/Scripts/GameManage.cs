@@ -8,8 +8,10 @@ public class GameManage : MonoBehaviour
 
     public static GameManage Instance;
     public MonsterFAB[] monsters;
-    public int murdertime;//Keeps track of who is about to kill
-    public int nightNo = 0;
+    public int murdertime = 0;//Keeps track of who is about to kill
+    public float nightNo = 0;
+    float deltaTime;
+    public float rollcall;
 
     void Start()
     {
@@ -24,31 +26,41 @@ public class GameManage : MonoBehaviour
 
         }
         murdertime = 0;
+        nightNo = 0;
     }
 
-    public void Nights(int nightNo)
+    public float Nights(float nightNo)
     {
         this.nightNo = nightNo;
+        return  0;
     }
 
 
     public void TimetoDie(int murderTime)
     {
         this.murdertime = murderTime;
-        if(murdertime == 0)
+        if(murderTime == 0)
         {
-            Debug.Log("It's chill");
+            Debug.Log("It's chill");//working
+        }
+        if(murderTime == 5) 
+        {
+            Debug.Log("Albert is the Man");//working
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        float deltaTime = Time.deltaTime;
+        deltaTime = Time.deltaTime;
         for (int i = 0; i < monsters.Length; i++)
         {
             monsters[i].Tick(deltaTime);
-
         }
+        TimetoDie(murdertime);
+        Nights(nightNo);
+        //nightNo += 1 * Mathf.CeilToInt(deltaTime); //to get time working with delta time (how much time has passed since called)
+        
     }
+
 }
