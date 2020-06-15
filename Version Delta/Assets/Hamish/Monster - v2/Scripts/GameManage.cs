@@ -9,7 +9,7 @@ public class GameManage : MonoBehaviour
     public static GameManage Instance;
     public MonsterFAB[] monsters;
     public int murdertime = 0;//Keeps track of who is about to kill
-    public float nightNo = 0;
+    public int nightNo = 0;
     float deltaTime;
     public float rollcall;
 
@@ -29,7 +29,7 @@ public class GameManage : MonoBehaviour
         nightNo = 0;
     }
 
-    public float Nights(float nightNo)
+    public float Nights(int nightNo)
     {
         this.nightNo = nightNo;
         return  0;
@@ -59,7 +59,7 @@ public class GameManage : MonoBehaviour
         }
         TimetoDie(murdertime);
         Nights(nightNo);
-        //nightNo += 1 * Mathf.CeilToInt(deltaTime); //to get time working with delta time (how much time has passed since called)
+        nightNo += 1 * Mathf.CeilToInt(deltaTime); //to get time working with delta time (how much time has passed since called)
         
     }
 

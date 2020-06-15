@@ -14,13 +14,14 @@ public abstract class MonsterFAB : MonoBehaviour
     protected int deltaTime;
     public int Mymurdertime; //Sets it's murder No. to send to the game manager
     protected bool canKill; //the script knows it can kill
-    public int aggression;
+    public bool awake = false;
+    private int agression;
     public abstract void Init();
 
     public virtual void Tick(float deltaTime) //It's private version of time
     {
         timeCheck += deltaTime;
-        if ()
+        if (awake == true)
         {
             Kill();
             Activity();
@@ -28,8 +29,23 @@ public abstract class MonsterFAB : MonoBehaviour
         //Functionallity Goes here
     }
 
+    private void Myagression(int agression)
+    {
+        this.agression = GameManage.Instance.nightNo;
 
-        public virtual float Kill()
+        if(agression >= monsterActive)
+        {
+            awake = true;
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            awake = false;
+            gameObject.SetActive(false);
+        }
+    }
+
+        public virtual float Kill() //checks if it can kill
         {
              if(timeCheck >= Mymurdertime)
             {
@@ -45,7 +61,7 @@ public abstract class MonsterFAB : MonoBehaviour
         return 0;
         }
 
-    public virtual void Activity()
+    public virtual void Activity() //It doing things
     {
         if(Mymurdertime == GameManage.Instance.nightNo)
         {

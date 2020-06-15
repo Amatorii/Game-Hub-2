@@ -755,6 +755,7 @@ MonoBehaviour:
   - {fileID: 782055109}
   murdertime: 0
   nightNo: 0
+  rollcall: 0
 --- !u!4 &684372585
 Transform:
   m_ObjectHideFlags: 0
@@ -891,9 +892,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MstAnime: {fileID: 0}
-  monsterActive: 0
+  monsterActive: 5
   Mymurdertime: 5
-  aggression: 0
+  awake: 0
 --- !u!65 &782055110
 BoxCollider:
   m_ObjectHideFlags: 0
