@@ -31,7 +31,7 @@ public abstract class MonsterFAB : MonoBehaviour
 
     private void Myagression(int agression)
     {
-        this.agression = GameManage.Instance.nightNo;
+        this.agression = GameManager.Instance.nightNo;
 
         if(agression >= monsterActive)
         {
@@ -55,7 +55,7 @@ public abstract class MonsterFAB : MonoBehaviour
              if(canKill == true)
             {
             Debug.Log("Isn't it?"); //woring
-                GameManage.Instance.TimetoDie(Mymurdertime);
+                GameManager.Instance.TimetoDie(Mymurdertime);
             }
         //Debug.Log("I've done my waiting, 12 years of it, in askiban"); //working?
         return 0;
@@ -63,7 +63,7 @@ public abstract class MonsterFAB : MonoBehaviour
 
     public virtual void Activity() //It doing things
     {
-        if(Mymurdertime == GameManage.Instance.nightNo)
+        if(Mymurdertime == GameManager.Instance.nightNo)
         {
             Debug.Log("HI");
         }

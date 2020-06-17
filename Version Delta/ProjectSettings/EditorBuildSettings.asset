@@ -12,15 +12,9 @@ EditorBuildSettings:
     path: Assets/Max/Game Over-Death Screen.unity
     guid: a1d4ab2c185c741468916e785f6073f5
   - enabled: 1
-    path: Assets/Hamish/Monsters - v1/Recycled Shit/Hamish/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Ultron Assemble/Colaberation Scene.unity
+    guid: eae35d9c2d25d5449a2c83a7fa371faa
   - enabled: 1
-    path: Assets/Hamish/Monsters - v1/Scenes/Monsters.unity
-    guid: 0823fcfcc0970cd4cbc7dcde1a373fb8
-  - enabled: 0
-    path: Assets/Hamish/Scenes/Hamish Title.unity
-    guid: 354a138cab30c224aba3b76d97ce8c69
-  - enabled: 0
-    path: Assets/Hamish/Scenes/Hamish Death.unity
-    guid: 84e360157746be4498be45991e9e12b3
+    path: Assets/Max/2DGame/Scenes/Level2D-1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
