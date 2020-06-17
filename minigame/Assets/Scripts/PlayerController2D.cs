@@ -12,17 +12,12 @@
         Rigidbody2D rb;
         float moveInput;
         bool jumpInput = false;
-
-        public SpriteRenderer GetCharacterSprite()
-        {
-            return GetCharacterSprite();
-        }
-
-        public void SetCharacterSprite(SpriteRenderer value) => SetCharacterSprite(value);
+        public bool onGround;
 
         void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+            characterSprite = GetComponentInChildren<SpriteRenderer>();
         }
 
         void Update()
@@ -42,7 +37,7 @@
         {
             Vector2 vel = rb.velocity;
             vel.x = moveInput * MovementSpeed;
-            bool onGround = GroundCheck();
+            onGround = GroundCheck();
 
             if (jumpInput == true && onGround == true)
             {
