@@ -9,12 +9,13 @@ public class Move : MonoBehaviour
     public float startingtime = 2; //the base time for the monster's patience
     float currenttime; //The current time the monster has to wait
     public float Movespeed = 5;//how fast he moves
+    public Transform resetPoint;
 
     public void StopMove() //makes the monster stop (interacts from other code)
     {
         Debug.Log("stop");
         moving = false;
-        transform.position = new Vector3(50, 0, 0);
+        transform.position = resetPoint.position;
     }
 
     private void Moving() 

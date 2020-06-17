@@ -8,6 +8,7 @@ public class ISeeYou : MonoBehaviour
 
     public void Seen()
     {
+        Debug.Log("Seen");
         move.StopMove();
     }
        

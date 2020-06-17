@@ -7,7 +7,7 @@ public class Albert : MonsterFAB
 {
     public override void Activity()
     {
-        if (Mymurdertime <= GameManage.Instance.nightNo)
+        if (Mymurdertime <= GameManager.Instance.nightNo)
         {
             Debug.Log("Albert says Hi"); //working
         }

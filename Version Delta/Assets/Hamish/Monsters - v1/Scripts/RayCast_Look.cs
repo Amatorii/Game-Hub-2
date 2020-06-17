@@ -21,6 +21,9 @@ public class RayCast_Look : MonoBehaviour
     {
         RaycastHit hit;
         Ray camRay = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+
+        Debug.DrawLine(cam.transform.position, cam.transform.forward * 100, Color.red);
+
         if(Physics.Raycast(camRay, out hit))
         {
             ISeeYou Exlamation = hit.transform.GetComponent<ISeeYou>();
@@ -31,4 +34,7 @@ public class RayCast_Look : MonoBehaviour
             }
         }
     }
+
+
+
 }
