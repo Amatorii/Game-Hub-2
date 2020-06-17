@@ -14,6 +14,7 @@ public class Move : MonoBehaviour
     {
         Debug.Log("stop");
         moving = false;
+        transform.position = new Vector3(50, 0, 0);
     }
 
     private void Moving() 
