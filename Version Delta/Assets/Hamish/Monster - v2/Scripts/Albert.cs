@@ -13,6 +13,13 @@ public class Albert : MonsterFAB
         }
         //Debug.Log("I like to move it move it");//working
 
+    }
+
+
+    //public virtual 
+    public override void Init()
+    {
+        canKill = false;
 
     }
 
