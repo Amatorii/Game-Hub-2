@@ -14,9 +14,6 @@ public class Albert : MonsterFAB
         //Debug.Log("I like to move it move it");//working
     }
 
-    public overide
-
-
 
     //public virtual 
     public override void Init()
