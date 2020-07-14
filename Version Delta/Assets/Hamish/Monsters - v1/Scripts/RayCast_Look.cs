@@ -5,10 +5,12 @@ using UnityEngine;
 public class RayCast_Look : MonoBehaviour
 {
     public Camera cam;
+    flashlight light; 
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
+        light = GetComponent<flashlight>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class RayCast_Look : MonoBehaviour
         if(Physics.Raycast(camRay, out hit))
         {
             ISeeYou Exlamation = hit.transform.GetComponent<ISeeYou>();
-            if (Exlamation != null)
+            if (Exlamation != null && light.FlashLightOn==true)
             {
                 Exlamation.Seen();
                 Debug.Log("checked");
