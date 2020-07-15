@@ -33,9 +33,8 @@ public class Move : MonoBehaviour
                 transform.Translate(Vector3.forward * Time.deltaTime * Movespeed); //makes the monster move foward
             }
         }
-
     }
-
+    int Testno = 5;
     void Start()
     {
         currenttime = startingtime; //restets the timer
@@ -46,5 +45,6 @@ public class Move : MonoBehaviour
     {
         Moving();
         moving = true;
+
     }
 }

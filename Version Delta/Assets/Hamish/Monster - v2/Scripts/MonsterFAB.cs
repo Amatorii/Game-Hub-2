@@ -28,8 +28,7 @@ public abstract class MonsterFAB : MonoBehaviour
         }
         //Functionallity Goes here
     }
-
-    private void Myagression(int agression)
+    protected virtual void Myagression(int agression)
     {
         this.agression = GameManager.Instance.nightNo;
 
@@ -54,7 +53,7 @@ public abstract class MonsterFAB : MonoBehaviour
             }
              if(canKill == true)
             {
-            Debug.Log("Isn't it?"); //woring
+            Debug.Log("Isn't it?"); //working
                 GameManager.Instance.TimetoDie(Mymurdertime);
             }
         //Debug.Log("I've done my waiting, 12 years of it, in askiban"); //working?

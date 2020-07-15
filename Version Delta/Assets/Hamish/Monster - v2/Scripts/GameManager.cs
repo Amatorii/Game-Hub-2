@@ -10,19 +10,18 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public MonsterFAB[] monsters;
     public int murdertime = 0;//Keeps track of who is about to kill
-    public int nightNo = 0;
+    public int nightNo = 5;
     float deltaTime;
     public float rollcall;
-
     public string game2DSceneName;
 
     void Start()
     {
-         if(Instance != null)
-         {
-             Debug.LogError("This is getting out of hand, Now we have" + Instance.gameObject);
-         }
-         Instance = this;
+        if (Instance != null)
+        {
+            Debug.LogError("This is getting out of hand, Now we have" + Instance.gameObject);
+        }
+        Instance = this;
 
         /*
          for (int i = 0; i < monsters.Length; i++)
@@ -44,7 +43,7 @@ public class GameManager : MonoBehaviour
     public float Nights(int nightNo)
     {
         this.nightNo = nightNo;
-        return  0;
+        return 0;
     }
 
     public void EndNight()
@@ -55,11 +54,11 @@ public class GameManager : MonoBehaviour
     public void TimetoDie(int murderTime)
     {
         this.murdertime = murderTime;
-        if(murderTime == 0)
+        if (murderTime == 0)
         {
             Debug.Log("It's chill");//working
         }
-        if(murderTime == 5) 
+        if (murderTime == 5)
         {
             Debug.Log("Albert is the Man");//working
         }
@@ -68,17 +67,35 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /* deltaTime = Time.deltaTime;
-        for (int i = 0; i < monsters.Length; i++)
-        {
-            monsters[i].Tick(deltaTime);
-        }
-        TimetoDie(murdertime);
-        Nights(nightNo);
-        nightNo += 1 * Mathf.CeilToInt(deltaTime); //to get time working with delta time (how much time has passed since called)
-        */
+        /* deltaTime = Time.deltaTime;
+         for (int i = 0; i < monsters.Length; i++)
+         {
+             monsters[i].Tick(deltaTime);
+         }
+         TimetoDie(murdertime);
+         Nights(nightNo);
+         nightNo += 1 * Mathf.CeilToInt(deltaTime); //to get time working with delta time (how much time has passed since called)
+         */
 
 
     }
 
+  
+    
+    public void FinishVGLevel(bool died = false)
+    {
+        if(died == true)
+        { 
+            //ISeeYou ded
+
+        }
+        else
+        {
+            //Won the game
+        }
+    }
+    
 }
+    
+
+
