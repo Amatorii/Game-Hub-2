@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public MonsterFAB[] monsters;
     public int murdertime = 0;//Keeps track of who is about to kill
-    public int nightNo = 5;
+    public int nightNo = 6;
     float deltaTime;
     public float rollcall;
     public string game2DSceneName;
@@ -23,14 +23,12 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
 
-        /*
+        
          for (int i = 0; i < monsters.Length; i++)
          {
              monsters[i].Init();
-
          }
          murdertime = 0;
-         nightNo = 0;*/
         Load2DGame();
 
     }
@@ -67,15 +65,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /* deltaTime = Time.deltaTime;
+         deltaTime = Time.deltaTime;
          for (int i = 0; i < monsters.Length; i++)
          {
              monsters[i].Tick(deltaTime);
          }
          TimetoDie(murdertime);
          Nights(nightNo);
-         nightNo += 1 * Mathf.CeilToInt(deltaTime); //to get time working with delta time (how much time has passed since called)
-         */
+        // nightNo += 1 * Mathf.CeilToInt(deltaTime); //to get time working with delta time (how much time has passed since called)
+         
 
 
     }

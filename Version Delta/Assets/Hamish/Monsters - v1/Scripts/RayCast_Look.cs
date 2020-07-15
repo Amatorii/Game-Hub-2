@@ -31,7 +31,7 @@ public class RayCast_Look : MonoBehaviour
             ISeeYou Exlamation = hit.transform.GetComponent<ISeeYou>();
             if (Exlamation != null && Light.FlashLightOn==true)
             {
-                Exlamation.Seen();
+                Exlamation.See();
                 Debug.Log("checked");
             }
         }

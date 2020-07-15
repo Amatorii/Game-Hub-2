@@ -24,7 +24,6 @@ public abstract class MonsterFAB : MonoBehaviour
         if (awake == true)
         {
             Kill();
-            Activity();
         }
         //Functionallity Goes here
     }
@@ -60,11 +59,8 @@ public abstract class MonsterFAB : MonoBehaviour
         return 0;
         }
 
-    public virtual void Activity() //It doing things
+    public virtual void seenquestion()
     {
-        if(Mymurdertime == GameManager.Instance.nightNo)
-        {
-            Debug.Log("HI");
-        }
+
     }
 }

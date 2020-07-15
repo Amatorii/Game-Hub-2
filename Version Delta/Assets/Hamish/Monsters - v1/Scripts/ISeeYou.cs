@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ISeeYou : MonoBehaviour
 {
-    public Move move;
+    public MonsterFAB mosnter;
 
-    public void Seen()
+    public void See()
     {
-        Debug.Log("Seen");
-        move.StopMove();
+        mosnter.seenquestion();
     }
        
 
