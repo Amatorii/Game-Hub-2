@@ -19,7 +19,6 @@ public class Albert : MonsterFAB
         //Debug.Log("I like to move it move it");//working
 
     }
-
     private void Moving()
     {
         if (moving == false)
@@ -29,7 +28,7 @@ public class Albert : MonsterFAB
         }
         if (moving == true)
         {
-            currenttime -= 1 * Time.deltaTime; //subtracts how long the monster has to wait by the in game time
+            currenttime -= Time.deltaTime; //subtracts how long the monster has to wait by the in game time
             if (currenttime <= 0)
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * Movespeed); //makes the monster move foward
@@ -38,21 +37,15 @@ public class Albert : MonsterFAB
     }
     public virtual void Tick()
     {
-
+        Moving();
     }
 
     //public virtual 
     public override void Init()
     {
         canKill = false;
-        startingtime = GameManager.Instance.nightNo; //subtract by two;
-        currenttime = GameManager.Instance.nightNo; //
-        
+        startingtime = Mathf.Pow(1.9f,6-0.14f*GameManager.Instance.nightNo) + 5;
+        Debug.Log(startingtime);
     }
-
 }
-
-
-// a Mathf.Pow() exponentials stuff 
-
 

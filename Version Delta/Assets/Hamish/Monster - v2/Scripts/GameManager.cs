@@ -10,10 +10,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public MonsterFAB[] monsters;
     public int murdertime = 0;//Keeps track of who is about to kill
-    public int nightNo = 0;
+    public int nightNo = 5;
     float deltaTime;
     public float rollcall;
-
     public string game2DSceneName;
 
     void Start()

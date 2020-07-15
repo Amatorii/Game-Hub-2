@@ -28,8 +28,7 @@ public abstract class MonsterFAB : MonoBehaviour
         }
         //Functionallity Goes here
     }
-
-    private void Myagression(int agression)
+    protected virtual void Myagression(int agression)
     {
         this.agression = GameManager.Instance.nightNo;
 
