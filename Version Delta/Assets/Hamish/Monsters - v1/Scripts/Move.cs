@@ -33,7 +33,6 @@ public class Move : MonoBehaviour
                 transform.Translate(Vector3.forward * Time.deltaTime * Movespeed); //makes the monster move foward
             }
         }
-
     }
 
     void Start()
