@@ -34,7 +34,6 @@ public class Move : MonoBehaviour
             }
         }
     }
-    int Testno = 5;
     void Start()
     {
         currenttime = startingtime; //restets the timer

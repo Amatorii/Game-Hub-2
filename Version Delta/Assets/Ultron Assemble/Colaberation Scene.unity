@@ -2786,7 +2786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ec8278abe13c04fb14412514804e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: {fileID: 0}
+  mosnter: {fileID: 1204934184}
 --- !u!65 &786247232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4118,6 +4118,7 @@ MonoBehaviour:
   monsterActive: 5
   Mymurdertime: 5
   awake: 0
+  moving: 1
   startingtime: 0
   Movespeed: 5
   resetPoint: {fileID: 1670135340}
