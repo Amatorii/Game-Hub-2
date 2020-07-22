@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Version Delta/Assets/Fergo.meta
 guid: 234d443f92f506d41909075e8795c513
+=======
+guid: 6212aaf38800233489d01d4cd7266a85
+>>>>>>> c8a6bc95a5c684b79817afb96ebe395215b20429:Version Delta/Assets/Max/Prefab.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Version Delta/Assets/Hamish/Monster - v2/Assets.meta
 guid: d1eb91fd3de4d0345b2639b3ec34b986
 folderAsset: yes
 DefaultImporter:
+=======
+guid: 357b8b5fbd9364740b0f254341368379
+PrefabImporter:
+>>>>>>> c8a6bc95a5c684b79817afb96ebe395215b20429:Version Delta/Assets/Max/Prefab/Player.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

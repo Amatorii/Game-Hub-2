@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics;
+using UnityEngine;
 
     public class PlayerController2D : MonoBehaviour
     {
@@ -42,6 +43,7 @@
             if (jumpInput == true && onGround == true)
             {
                 vel.y = JumpSpeed;
+            
             }
             rb.velocity = vel;
         }
