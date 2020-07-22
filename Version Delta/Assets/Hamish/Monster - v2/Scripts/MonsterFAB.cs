@@ -48,11 +48,11 @@ public abstract class MonsterFAB : MonoBehaviour
              if(timeCheck >= Mymurdertime)
             {
             canKill = true;
-            Debug.Log("It's time to begin"); //working
+           // Debug.Log("It's time to begin"); //working
             }
              if(canKill == true)
             {
-            Debug.Log("Isn't it?"); //working
+          //  Debug.Log("Isn't it?"); //working
                 GameManager.Instance.TimetoDie(Mymurdertime);
             }
         //Debug.Log("I've done my waiting, 12 years of it, in askiban"); //working?
