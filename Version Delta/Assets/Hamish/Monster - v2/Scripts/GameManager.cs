@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        nightNo = 6;
         if (Instance != null)
         {
             Debug.LogError("This is getting out of hand, Now we have" + Instance.gameObject);
@@ -54,11 +55,11 @@ public class GameManager : MonoBehaviour
         this.murdertime = murderTime;
         if (murderTime == 0)
         {
-            Debug.Log("It's chill");//working
+           // Debug.Log("It's chill");//working
         }
         if (murderTime == 5)
         {
-            Debug.Log("Albert is the Man");//working
+            //Debug.Log("Albert is the Man");//working
         }
     }
 
@@ -73,9 +74,6 @@ public class GameManager : MonoBehaviour
          TimetoDie(murdertime);
          Nights(nightNo);
         // nightNo += 1 * Mathf.CeilToInt(deltaTime); //to get time working with delta time (how much time has passed since called)
-         
-
-
     }
 
   
