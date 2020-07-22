@@ -43,7 +43,7 @@ using UnityEngine;
             if (jumpInput == true && onGround == true)
             {
                 vel.y = JumpSpeed;
-            
+           
             }
             rb.velocity = vel;
         }
