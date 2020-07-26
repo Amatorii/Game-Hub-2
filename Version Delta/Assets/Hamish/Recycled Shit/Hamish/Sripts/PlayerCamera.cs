@@ -6,7 +6,7 @@ public class PlayerCamera : MonoBehaviour
 {
     public float mouseSensitivity = 2.0f;
     public Camera firstPersonCam;
-
+    public bool ded;
     float rotatePitch;
     float pitchRange = 60.0f;
     float rotateYaw;
@@ -29,12 +29,13 @@ public class PlayerCamera : MonoBehaviour
         zones = LayerMask.GetMask("Zones");
         cam = Camera.main;
         anim = GetComponent<Animator>();
+        ded = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CameraMovement();
+        Deadquestion();
         Movement();
         movePlace = GetZone();
         if (Input.GetButtonDown("Jump"))
@@ -68,6 +69,15 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 
+    void Deadquestion()
+    {
+        if (ded == false)
+        {
+            CameraMovement();
+        }
+        if(ded == true)
+        { }
+    }
     void CameraMovement()
     {
         rotateYaw += Input.GetAxis("Mouse X") * mouseSensitivity;

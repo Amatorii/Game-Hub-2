@@ -35,15 +35,16 @@ public class Albert : MonsterFAB
     public override void Tick(float deltaTime)
     {
         Moving();
-        seenquestion();
         moving = true;
-        Chant();
     }
     public void Chant()
     {
-        AlbertSounds.clip = AlbertChant;
-        AlbertSounds.Play();
-        Debug.Log("He Be Singing");
+        if (Time.time > startingtime - 5)
+        {
+            AlbertSounds.clip = AlbertChant;
+            AlbertSounds.Play();
+            Debug.Log("He Be Singing");
+        }
     }
 
     public override void seenquestion()
@@ -55,9 +56,10 @@ public class Albert : MonsterFAB
     public override void Init()
     {
         startingtime = Mathf.Pow(1.9f, 5.6f - 0.14f * GameManager.Instance.nightNo) + 5;
-       // Debug.Log("Albert is here! I'm going to wait for " + startingtime);
+       Debug.Log("Albert is here! I'm going to wait for " + startingtime);
         currenttime = startingtime;
         canKill = false;
+        Chant();
     }
 }
 
