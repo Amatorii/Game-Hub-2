@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Max/2DGame/Scenes/Second.unity
     guid: 732742a8a2b139e49835ee678e0ec025
+  - enabled: 1
+    path: Assets/Hamish/Scenes/New Scene.unity
+    guid: 5df3096b6bbb6d54aac5dc7cbc6545a7
   m_configObjects: {}
