@@ -127,6 +127,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1427180209487173770, guid: d6dd565afa6ff8d4a87e0a55344ab9b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1427180209487173780, guid: d6dd565afa6ff8d4a87e0a55344ab9b6,
         type: 3}
       propertyPath: m_Range
@@ -262,7 +267,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.872
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -273,7 +278,7 @@ AudioSource:
   MinDistance: 0.19103241
   MaxDistance: 59.612602
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -2137,7 +2142,7 @@ MonoBehaviour:
   murdertime: 0
   nightNo: 5
   rollcall: 0
-  game2DSceneName: Frist
+  game2DSceneName: Second
 --- !u!4 &438749359
 Transform:
   m_ObjectHideFlags: 0
@@ -5540,7 +5545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1565067035
 Transform:
   m_ObjectHideFlags: 0
