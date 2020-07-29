@@ -39,12 +39,9 @@ public class Albert : MonsterFAB
     }
     public void Chant()
     {
-        if (Time.time > startingtime - 5)
-        {
             AlbertSounds.clip = AlbertChant;
             AlbertSounds.Play();
             Debug.Log("He Be Singing");
-        }
     }
 
     public override void seenquestion()
