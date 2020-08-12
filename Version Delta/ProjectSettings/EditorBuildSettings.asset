@@ -14,9 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Ultron Assemble/Colaberation Scene.unity
     guid: eae35d9c2d25d5449a2c83a7fa371faa
-  - enabled: 0
-    path: Assets/Max/Scenes/Minigame.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Max/2DGame/Scenes/Frist.unity
     guid: 47ca27f083ac3d2489d1fc442800c814
