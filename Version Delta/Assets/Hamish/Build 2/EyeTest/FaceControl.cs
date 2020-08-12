@@ -5,7 +5,6 @@ using UnityEngine;
 public class FaceControl : MonoBehaviour
 {
     public MeshRenderer[] eyes;
-
     public int eyesClosed;
     public float timer;
     public float timeToOpen = 1;

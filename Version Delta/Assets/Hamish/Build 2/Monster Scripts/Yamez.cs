@@ -8,10 +8,11 @@ public class Yamez : MonsterFAB
     public float startingTime;
     public float currentTime;
     public int Eyetime;
-
     public MeshRenderer[] eyes;
+    public int eyesClosed;
+    public float timer;
+    public float timeToOpen = 1;
     public Texture eyeOpen;
-    public Texture eyeClosed;
 
     public override void Init()
     {
@@ -21,12 +22,23 @@ public class Yamez : MonsterFAB
         Debug.Log(startingTime);
         currentTime = startingTime;
         Eyetime = 3;
+        eyesClosed = eyes.Length;
+        timer = timeToOpen;
     }
 
     public override void Tick(float deltaTime)
     {
         currentTime -= Time.deltaTime;
         hereIcome();
+        if (eyesClosed == 0)
+            return;
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            eyesClosed -= 1;
+            eyes[eyesClosed].material.SetTexture("_BaseMap", eyeOpen);
+            timer = timeToOpen;
+        }
     }
 
     public void hereIcome()
@@ -46,14 +58,4 @@ public class Yamez : MonsterFAB
             }
         }
     }
-
-    void CloseEyes()
-    {
-        for (int i = 0; i < eyes.Length; i++)
-        {
-            eyes[i].material.mainTexture = eyeClosed;
-        }
-        eyecount = eyes.Length;
-    }
-
 }
