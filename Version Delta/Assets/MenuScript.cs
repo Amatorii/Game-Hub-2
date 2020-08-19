@@ -18,7 +18,7 @@ public class MenuScript : MonoBehaviour
 
     public void MurderText()
     {
-        this.define = GameManager.Instance.murdertime;
+        this.define = GameData.Instance.murdertime;
         Debug.Log(define);
         if(define == 1)
         {
