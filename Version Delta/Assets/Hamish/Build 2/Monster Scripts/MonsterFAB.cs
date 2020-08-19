@@ -10,7 +10,6 @@ public abstract class MonsterFAB : MonoBehaviour
     public int monsterActive; //Is it active
     protected int deltaTime;
     public int Mymurdertime; //Sets it's murder No. to send to the game manager
-    protected bool canKill; //the script knows it can kill
     public bool awake = false;
     private int agression;
     public bool ActionisComing;

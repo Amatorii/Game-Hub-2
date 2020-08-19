@@ -37,6 +37,11 @@ public class Albert : MonsterFAB
     {
         Moving();
         moving = true;
+        if(ActionisComing == false)
+        {
+            moving = false;
+        }
+        ActionisComing = true;
     }
     public void Chant()
     {
@@ -44,20 +49,13 @@ public class Albert : MonsterFAB
             AlbertSounds.Play();
             Debug.Log("He Be Singing");
     }
-
-    public override void seenquestion()
-    {
-            moving = false;
-    }
-
     //public virtual 
     public override void Init()
     {
-        startingtime = 1;
-        //startingtime = Mathf.Pow(1.9f, 5.6f - 0.14f * GameManager.Instance.nightNo) + 5;
+        //startingtime = 1;
+        startingtime = Mathf.Pow(1.9f, 5.6f - 0.14f * GameManager.Instance.nightNo) + 5;
         Debug.Log("Albert is here! I'm going to wait for " + startingtime);
         currenttime = startingtime;
-        canKill = false;
         Chant();
     }
 }

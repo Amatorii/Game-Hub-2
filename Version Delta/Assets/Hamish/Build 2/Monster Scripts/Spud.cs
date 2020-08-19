@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Spud : MonsterFAB
 {
-    public bool ActionisComing;
     public Transform Window;
     public Transform windowClose;
     public Transform windowOpen;
@@ -51,9 +50,5 @@ public class Spud : MonsterFAB
                 }
             }
         }
-    }
-    public override void seenquestion()
-    {
-        ActionisComing = false;
     }
 }
