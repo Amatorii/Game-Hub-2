@@ -28,11 +28,20 @@ public class Yamez : MonsterFAB
 
     public override void Tick(float deltaTime)
     {
-        currentTime -= Time.deltaTime;
-        hereIcome();
+        if (ActionisComing == false)
+        {
+            hereIcome();
+        }
+        if(ActionisComing == true)
+        {
+            currentTime = startingTime;
+            eyecount = eyes.Length;
+            //How do you revert the eye texture?
+        }
         if (eyesClosed == 0)
+        {
             return;
-        timer -= Time.deltaTime;
+        }
         if (timer < 0)
         {
             eyesClosed -= 1;
@@ -44,17 +53,20 @@ public class Yamez : MonsterFAB
     public void hereIcome()
     {
 
-
+        currentTime -= Time.deltaTime;
+        timer -= Time.deltaTime;
         if (currentTime < 0)
         {
             Debug.Log(eyecount);
             eyecount -= 1;
             currentTime = Eyetime;
-            eyes[eyecount].material.mainTexture = eyeOpen;
-
-            if (eyecount < 0)
+            if (eyecount <= 0)
             {
                 Debug.Log("U DED");
+            }
+            else
+            {
+                eyes[eyecount].material.mainTexture = eyeOpen;
             }
         }
     }
