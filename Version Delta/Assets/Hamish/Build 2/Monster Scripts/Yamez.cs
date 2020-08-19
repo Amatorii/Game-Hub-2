@@ -63,6 +63,7 @@ public class Yamez : MonsterFAB
             if (eyecount <= 0)
             {
                 Debug.Log("U DED");
+                GameManager.Instance.TimetoDie(2);
             }
             else
             {
