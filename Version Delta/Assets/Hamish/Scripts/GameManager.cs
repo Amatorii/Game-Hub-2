@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     public MonsterFAB[] monsters;
-    public int murdertime = 0;//Keeps track of who is about to kill
+    
     public int nightNo = 6;
     float deltaTime;
     public float rollcall;
@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
     public bool GameRunning;
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
-
         if (Instance != null)
         {
             Debug.LogError("This is getting out of hand, Now we have" + Instance.gameObject);
@@ -37,7 +35,7 @@ public class GameManager : MonoBehaviour
          {
              monsters[i].Init();
          }
-         murdertime = 0;
+        GameData.Instance.murdertime = 0;
         Load2DGame();
     }
 
@@ -65,7 +63,7 @@ public class GameManager : MonoBehaviour
     public void TimetoDie(int murderTime)
     {
         GameRunning = false;
-        this.murdertime = murderTime;
+        GameData.Instance.murdertime = murderTime;
         if (murderTime == 0)
         {
            Debug.Log("It's chill");//working
