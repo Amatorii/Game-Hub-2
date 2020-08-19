@@ -13,6 +13,7 @@ public class Yamez : MonsterFAB
     public float timer;
     public float timeToOpen = 1;
     public Texture eyeOpen;
+    public Texture eyeClosed;
 
     public override void Init()
     {
@@ -24,19 +25,26 @@ public class Yamez : MonsterFAB
         Eyetime = 3;
         eyesClosed = eyes.Length;
         timer = timeToOpen;
+        ActionisComing = true;
     }
 
     public override void Tick(float deltaTime)
     {
         if (ActionisComing == false)
         {
-            hereIcome();
+            eyecount = eyes.Length;
+            //eyecount = 69;
+            startingTime = Mathf.Pow(3, 2.8f - .1f * GameManager.Instance.nightNo) - 4;
+            Debug.Log(startingTime);
+            currentTime = startingTime;
+            Eyetime = 3;
+            eyesClosed = eyes.Length;
+            timer = timeToOpen;
+            Closeeyes();
         }
         if(ActionisComing == true)
         {
-            currentTime = startingTime;
-            eyecount = eyes.Length;
-            //How do you revert the eye texture?
+            hereIcome();
         }
         if (eyesClosed == 0)
         {
@@ -48,7 +56,16 @@ public class Yamez : MonsterFAB
             eyes[eyesClosed].material.SetTexture("_BaseMap", eyeOpen);
             timer = timeToOpen;
         }
+        ActionisComing = true;
     }
+
+    public void Closeeyes()
+    {
+        for (int i = 0; i < eyes.Length; i++)
+        {
+            eyes[i].material.SetTexture("_BaseMap", eyeClosed);
+        }
+    }    
 
     public void hereIcome()
     {
