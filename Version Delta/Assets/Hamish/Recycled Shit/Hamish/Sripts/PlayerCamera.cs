@@ -10,6 +10,7 @@ public class PlayerCamera : MonoBehaviour
     float rotatePitch;
     float pitchRange = 60.0f;
     float rotateYaw;
+    public bool sleep;
 
     //Transform movePoint;
     Transform pointToHit;
@@ -30,24 +31,22 @@ public class PlayerCamera : MonoBehaviour
         cam = Camera.main;
         anim = GetComponent<Animator>();
         ded = false;
+        sleep = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Deadquestion();
-        Movement();
+        if (GameManager.Instance.sleep == true)
+        {
+            return;
+        }
+        CameraMovement();
         movePlace = GetZone();
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Fire1"))
         {
             SetLocation();
         }
-    }
-
-    void Movement()
-    {
-        // direction = transform.rotation * direction;
-        //transform.position = Vector3.Lerp(transform.position, movePoint.position, 0.1f);
     }
 
     void SetLocation()
@@ -69,15 +68,6 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 
-    void Deadquestion()
-    {
-        if (ded == false)
-        {
-            CameraMovement();
-        }
-        if(ded == true)
-        { }
-    }
     void CameraMovement()
     {
         rotateYaw += Input.GetAxis("Mouse X") * mouseSensitivity;

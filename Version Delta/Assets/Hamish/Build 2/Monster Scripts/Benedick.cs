@@ -29,12 +29,23 @@ public class Benedick : MonsterFAB
             transform.Rotate(Vector3.up * Time.deltaTime * 36);
             if(comingTime <= 0)
             {
-                Debug.Log("Peek a Boo!");
-                transform.Rotate(Vector3.up * 180);
-                currentTime = startTime;
-                comingTime = startComingTime;
+                NaughtyorNice();
             }
         }
 
+    }
+    public void NaughtyorNice()
+    {
+        if(GameManager.Instance.sleep == true)
+        {
+            Debug.Log("You're Safe");
+        }
+        else
+        {
+            Debug.Log("omae wa mou shindeiru");
+        }
+        transform.Rotate(Vector3.up * 180);
+        currentTime = startTime;
+        comingTime = startComingTime;
     }
 }

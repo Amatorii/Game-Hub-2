@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public string game2DSceneName;
     public int DeathNo;
     public bool GameRunning;
+    public bool sleep;
+    
     void Start()
     {
         if (Instance != null)
@@ -25,6 +27,13 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         Init();
+    }
+    public void fakeSleep()
+    {
+        if (Input.GetButton("Fire3"))
+        {
+            sleep = !sleep;
+        }
     }
 
     public void Init()

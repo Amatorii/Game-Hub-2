@@ -23,7 +23,12 @@ using UnityEngine;
 
         void Update()
         {
-            moveInput = Input.GetAxis("Horizontal");
+        if (GameManager.Instance.sleep == true)
+        {
+            return;
+        }
+
+        moveInput = Input.GetAxis("Horizontal");
             jumpInput = Input.GetButton("Jump");
 
             if (moveInput < 0) // left

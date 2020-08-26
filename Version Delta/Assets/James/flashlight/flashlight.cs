@@ -27,6 +27,7 @@ public class flashlight : MonoBehaviour
             batteryPower -= batteryUsage * Time.deltaTime;
             if(batteryPower < 0) {
                 flashlightAsset.gameObject.SetActive(false);
+                FlashLightOn = false;
             }
         }
     }
