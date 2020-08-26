@@ -18,6 +18,11 @@ public class MenuScript : MonoBehaviour
 
     public void MurderText()
     {
+        if(GameData.Instance == null)
+        {
+            deathText.text = "No game data instances";
+            return;
+        }
         this.define = GameData.Instance.murdertime;
         Debug.Log(define);
         if(define == 1)
