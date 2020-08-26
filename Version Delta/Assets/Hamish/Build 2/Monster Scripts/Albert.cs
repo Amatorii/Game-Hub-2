@@ -20,7 +20,7 @@ public class Albert : MonsterFAB
         if (moving == false)
         {
             currenttime = startingtime; //lazy way to stop the monster from moving
-            //Debug.Log("Not Moving - A");
+            Debug.Log("Not Moving - A");
             transform.position = resetPoint.position;
         }
         if (moving == true)
@@ -52,8 +52,8 @@ public class Albert : MonsterFAB
     //public virtual 
     public override void Init()
     {
-        //startingtime = 1;
-        startingtime = Mathf.Pow(1.9f, 5.6f - 0.14f * GameManager.Instance.nightNo) + 5;
+        startingtime = 1;
+        //startingtime = Mathf.Pow(1.9f, 5.6f - 0.14f * GameManager.Instance.nightNo) + 5;
         Debug.Log("Albert is here! I'm going to wait for " + startingtime);
         currenttime = startingtime;
         Chant();
