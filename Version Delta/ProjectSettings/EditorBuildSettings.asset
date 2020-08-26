@@ -6,21 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Max/Scenes/Main Menue.unity
+    path: Assets/Nick/Scenes/Main Menue.unity
     guid: dcc7443dfc9536d47bf188f8691c8cc4
   - enabled: 1
-    path: Assets/Max/Scenes/Game Over-Death Screen.unity
+    path: Assets/Nick/Scenes/Game Over-Death Screen.unity
     guid: a1d4ab2c185c741468916e785f6073f5
   - enabled: 1
     path: Assets/Ultron Assemble/Colaberation Scene.unity
     guid: eae35d9c2d25d5449a2c83a7fa371faa
   - enabled: 1
-    path: Assets/Max/2DGame/Scenes/Frist.unity
+    path: Assets/Nick/2DGame/Scenes/Frist.unity
     guid: 47ca27f083ac3d2489d1fc442800c814
   - enabled: 1
-    path: Assets/Max/2DGame/Scenes/Second.unity
+    path: Assets/Nick/2DGame/Scenes/Second.unity
     guid: 732742a8a2b139e49835ee678e0ec025
-  - enabled: 1
-    path: Assets/Hamish/Scenes/New Scene.unity
-    guid: 5df3096b6bbb6d54aac5dc7cbc6545a7
   m_configObjects: {}
