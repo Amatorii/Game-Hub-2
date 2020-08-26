@@ -11,7 +11,6 @@ public class PlayerCamera : MonoBehaviour
     float pitchRange = 60.0f;
     float rotateYaw;
     public bool sleep;
-
     //Transform movePoint;
     Transform pointToHit;
     public Transform[] locations;
@@ -32,21 +31,28 @@ public class PlayerCamera : MonoBehaviour
         anim = GetComponent<Animator>();
         ded = false;
         sleep = false;
+        lastSleep = GameManager.Instance.sleep;
     }
 
+    bool lastSleep;
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.sleep != lastSleep)
+      {
+            anim.SetBool("Sleep", GameManager.Instance.sleep);
+           lastSleep = GameManager.Instance.sleep;
+        }
         if (GameManager.Instance.sleep == true)
         {
             return;
         }
         CameraMovement();
         movePlace = GetZone();
-        if (Input.GetButtonDown("Fire1"))
-        {
-            SetLocation();
-        }
+       // if (Input.GetButtonDown("Fire1"))
+        
+           // SetLocation();
+        
     }
 
     void SetLocation()

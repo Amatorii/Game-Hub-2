@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public bool GameRunning;
     public bool sleep;
     
-    void Start()
+    void Awake()
     {
         if (Instance != null)
         {
@@ -27,10 +27,11 @@ public class GameManager : MonoBehaviour
         }
         Instance = this;
         Init();
+        sleep = false;
     }
     public void fakeSleep()
     {
-        if (Input.GetButton("Fire3"))
+        if (Input.GetButton("Fire1"))
         {
             sleep = !sleep;
         }
@@ -107,13 +108,21 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (sleep == true)
+        {
+            Debug.Log("He Sleep");
+        }
+        else
+        {
+            Debug.Log("He Woke");
+        }
         deltaTime = Time.deltaTime;
          for (int i = 0; i < monsters.Length; i++)
          {
              monsters[i].Tick(deltaTime);
          }
          Nights(nightNo);
-        
+        fakeSleep();
         // nightNo += 1 * Mathf.CeilToInt(deltaTime); //to get time working with delta time (how much time has passed since called)
     }
 
