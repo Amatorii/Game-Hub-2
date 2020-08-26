@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SS_Ham: MonoBehaviour
 {
+    public int Monster = 4;
     void OnTriggerEnter(Collider other)
     {
+        manageDeath();
+    }
+    public void manageDeath()
+    {
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene(1);
+        GameManager.Instance.TimetoDie(Monster);
     }
 }

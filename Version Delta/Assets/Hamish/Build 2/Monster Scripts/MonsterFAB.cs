@@ -10,17 +10,16 @@ public abstract class MonsterFAB : MonoBehaviour
     public int monsterActive; //Is it active
     protected int deltaTime;
     public int Mymurdertime; //Sets it's murder No. to send to the game manager
-    protected bool canKill; //the script knows it can kill
     public bool awake = false;
     private int agression;
+    public bool ActionisComing;
+
     public abstract void Init();
 
     public virtual void Tick(float deltaTime) //It's private version of time
     {
-        if (awake == true)
-        {
-
-        }
+        ActionisComing = true;
+        Debug.Log(ActionisComing);
     }
     protected virtual void Myagression(int agression)
     {
@@ -40,6 +39,6 @@ public abstract class MonsterFAB : MonoBehaviour
 
     public virtual void seenquestion()
     {
-
+        ActionisComing = false; 
     }
 }
