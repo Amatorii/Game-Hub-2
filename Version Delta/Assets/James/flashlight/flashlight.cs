@@ -20,7 +20,6 @@ public class flashlight : MonoBehaviour
         {
             FlashLightOn = !FlashLightOn;
             flashlightAsset.gameObject.SetActive(FlashLightOn);
-            
         }
 
         if(FlashLightOn)

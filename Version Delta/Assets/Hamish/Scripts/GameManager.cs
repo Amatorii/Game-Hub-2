@@ -34,6 +34,11 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void Gamewin()
+    {
+        SceneManager.LoadScene(5);
+    }
+
     public void Load2DGame()
     {
         SceneManager.LoadSceneAsync(game2DSceneName, LoadSceneMode.Additive);
