@@ -10,7 +10,8 @@ public class PlayerCamera : MonoBehaviour
     float rotatePitch;
     float pitchRange = 60.0f;
     float rotateYaw;
-
+    public bool sleeping;
+    bool underBed;
     //Transform movePoint;
     Transform pointToHit;
     public Transform[] locations;
@@ -24,6 +25,7 @@ public class PlayerCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sleeping = false;
         Cursor.lockState = CursorLockMode.Locked;
         //movePoint = locations[0];
         zones = LayerMask.GetMask("Zones");
@@ -35,49 +37,48 @@ public class PlayerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Deadquestion();
-        Movement();
-        movePlace = GetZone();
-        if (Input.GetButtonDown("Jump"))
-        {
-            SetLocation();
-        }
-    }
-
-    void Movement()
-    {
-        // direction = transform.rotation * direction;
-        //transform.position = Vector3.Lerp(transform.position, movePoint.position, 0.1f);
-    }
-
-    void SetLocation()
-    {
-        if (onBed == true)
-        {
-            if(movePlace == 1)
-                 anim.SetBool("UnderBed", true);
-            if (movePlace == 2)
-                anim.SetBool("Wardrobe", true);
-
-            onBed = false;
-        }
-        else
-        {
-            anim.SetBool("UnderBed", false);
-            anim.SetBool("Wardrobe", false);
-            onBed = true;
-        }
-    }
-
-    void Deadquestion()
-    {
-        if (ded == false)
+        if (sleeping == false)
         {
             CameraMovement();
         }
-        if(ded == true)
-        { }
+        movePlace = GetZone();
+        if(Input.GetButtonDown("Fire3"))
+        {
+            sleeping = !sleeping;
+            anim.SetBool("Sleeping", sleeping);
+        }
+        if(sleeping)
+        {
+            firstPersonCam.transform.localRotation = Quaternion.Slerp(firstPersonCam.transform.localRotation, Quaternion.Euler(-2, 10, 0), Time.deltaTime * 5);
+        }
     }
+
+
+
+
+    void AnimationStuff()
+    {
+
+        
+        anim.SetBool("UnderBed", underBed);
+
+        /* if (onBed == true)
+         {
+             if(movePlace == 1)
+                  anim.SetBool("UnderBed", true);
+             if (movePlace == 2)
+                 anim.SetBool("Wardrobe", true);
+
+             onBed = false;
+         }
+         else
+         {
+             anim.SetBool("UnderBed", false);
+             anim.SetBool("Wardrobe", false);
+             onBed = true;
+         }*/
+    }
+
     void CameraMovement()
     {
         rotateYaw += Input.GetAxis("Mouse X") * mouseSensitivity;
