@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     public MonsterFAB[] monsters;
-
     public int nightNo = 6;
     public LevelData[] levelData;
     float deltaTime;
@@ -17,7 +16,6 @@ public class GameManager : MonoBehaviour
     public string game2DSceneName;
     public int DeathNo;
     public bool GameRunning;
-
     void Start()
     {
         if (Instance != null)
@@ -33,13 +31,13 @@ public class GameManager : MonoBehaviour
     {
         GameRunning = true;
         nightNo = 1;
-        Debug.Log(levelData[nightNo-1].AlbertLevel);
+        //Debug.Log(levelData[nightNo-1].AlbertLevel);
 
         for (int i = 0; i < monsters.Length; i++)
          {
              monsters[i].Init();
          }
-        GameData.Instance.murdertime = 0;
+  //      GameData.Instance.murdertime = 0;
         Load2DGame();
     }
 
@@ -50,8 +48,8 @@ public class GameManager : MonoBehaviour
 
     public void Load2DGame()
     {
-        SceneManager.LoadSceneAsync(levelData[nightNo - 1].GameLevel, LoadSceneMode.Additive);
-    }
+       // SceneManager.LoadSceneAsync(levelData[nightNo - 1].GameLevel, LoadSceneMode.Additive);
+    } 
 
     public float Nights(int nightNo)
     {

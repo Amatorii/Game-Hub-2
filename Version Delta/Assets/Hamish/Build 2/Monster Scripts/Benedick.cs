@@ -8,7 +8,7 @@ public class Benedick : MonsterFAB
     public float currentTime;
     public float comingTime;
     public float startComingTime = 5;
-
+    public PlayerCamera gamer;
     public override void Init()
     {
         currentTime = startTime;
@@ -26,15 +26,25 @@ public class Benedick : MonsterFAB
         if(currentTime <= 0)
         {
             comingTime -= Time.deltaTime;
-            transform.Rotate(Vector3.up * Time.deltaTime * 36);
             if(comingTime <= 0)
             {
-                Debug.Log("Peek a Boo!");
-                transform.Rotate(Vector3.up * 180);
-                currentTime = startTime;
-                comingTime = startComingTime;
+                Killing();
             }
         }
 
+    }
+
+    public void Killing()
+    {
+        if (gamer.sleeping == false)
+        {
+            Debug.Log("U Dead");
+        }
+        else
+        {
+            currentTime = startTime;
+            Debug.Log("U no dead");
+            comingTime = startComingTime;
+        }
     }
 }
