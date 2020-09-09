@@ -41,8 +41,8 @@ Camera:
   m_GameObject: {fileID: 885777798}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0.76470596, b: 0.76470596, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -65,7 +65,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: ca923e38a9255b5458af1066c26ab035, type: 2}
+  m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7127064084702129188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.028, y: 0.834, z: 0}
+  m_LocalPosition: {x: -0, y: 0.186, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7127064085099837551}
@@ -232,8 +232,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.79}
-  m_Size: {x: 0.5, y: 1.5}
+  m_Offset: {x: 0, y: 0.21}
+  m_Size: {x: 0.3, y: 0.3}
   m_Direction: 0
 --- !u!50 &7127064085099837546
 Rigidbody2D:
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 3
-  JumpSpeed: 4
+  JumpSpeed: 7
   groundRadiusCheck: 0.3
   layers:
     serializedVersion: 2
