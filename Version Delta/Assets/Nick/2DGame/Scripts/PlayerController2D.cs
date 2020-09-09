@@ -27,9 +27,9 @@ using UnityEngine;
             jumpInput = Input.GetButton("Jump");
 
             if (moveInput < 0) // left
-                faceRight = false;
-            else if (moveInput > 0) // right
                 faceRight = true;
+            else if (moveInput > 0) // right
+                faceRight = false;
 
             characterSprite.flipX = faceRight;
         }

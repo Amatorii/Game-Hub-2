@@ -6,13 +6,18 @@ public class Benedick : MonsterFAB
 {
     public float startTime = 5;
     public float currentTime;
-    public float comingTime;
-    public float startComingTime = 5;
     public PlayerCamera gamer;
+    public Animator Anim;
+    public bool checking;
+    public bool checkForDeath;
     public override void Init()
     {
-        currentTime = startTime;
-        comingTime = startComingTime;
+        Left();
+    }
+
+    public void Start()
+    {
+        Anim = GetComponent<Animator>();
     }
 
     public override void Tick(float deltaTime)
@@ -23,15 +28,20 @@ public class Benedick : MonsterFAB
     public void CzecTimer()
     {
         currentTime -= Time.deltaTime;
-        if(currentTime <= 0)
+        if(currentTime <= 0 && checking == false)
         {
-            comingTime -= Time.deltaTime;
-            if(comingTime <= 0)
-            {
-                Killing();
-            }
+            checking = true;
+            Anim.SetBool("checking", checking);
         }
+        if(checkForDeath == true)
+        {
+            Killing();
+        }
+    }
 
+    public void CheckForDeath()
+    {
+        checkForDeath = true;
     }
 
     public void Killing()
@@ -42,9 +52,14 @@ public class Benedick : MonsterFAB
         }
         else
         {
-            currentTime = startTime;
             Debug.Log("U no dead");
-            comingTime = startComingTime;
         }
+    }
+
+    public void Left()
+    {
+        checking = false;
+        currentTime = Random.Range(minValue, maxValue);
+        checkForDeath = false;
     }
 }
