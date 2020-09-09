@@ -6,77 +6,59 @@ public class PlayerCamera : MonoBehaviour
 {
     public float mouseSensitivity = 2.0f;
     public Camera firstPersonCam;
-    public bool ded;
     float rotatePitch;
     float pitchRange = 60.0f;
     float rotateYaw;
     public bool sleeping;
-    bool underBed;
+    bool checkingBed;
     //Transform movePoint;
-    Transform pointToHit;
     public Transform[] locations;
-    bool onBed = true;
-    int movePlace;
-
-    LayerMask zones;
-    Camera cam;
     Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         sleeping = false;
+        checkingBed = false;
         Cursor.lockState = CursorLockMode.Locked;
         //movePoint = locations[0];
-        zones = LayerMask.GetMask("Zones");
-        cam = Camera.main;
         anim = GetComponent<Animator>();
-        ded = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (sleeping == false)
-        {
-            CameraMovement();
-        }
-        movePlace = GetZone();
-        if(Input.GetButtonDown("Fire3"))
-        {
-            sleeping = !sleeping;
-            anim.SetBool("Sleeping", sleeping);
-        }
-        if(sleeping)
-        {
-            firstPersonCam.transform.localRotation = Quaternion.Slerp(firstPersonCam.transform.localRotation, Quaternion.Euler(-2, 10, 0), Time.deltaTime * 5);
-        }
+        Movement();
     }
 
 
 
 
-    void AnimationStuff()
+    void Movement()
     {
+        if (sleeping == false && checkingBed == false)
+        {
+            CameraMovement();
+        }
+        if (Input.GetButtonDown("Fire3") && checkingBed == false)
+        {
+            sleeping = !sleeping;
+            anim.SetBool("Sleeping", sleeping);
+        }
+        if (sleeping)
+        {
+            firstPersonCam.transform.localRotation = Quaternion.Slerp(firstPersonCam.transform.localRotation, Quaternion.Euler(-2, 10, 0), Time.deltaTime * 5);
+        }
 
-        
-        anim.SetBool("UnderBed", underBed);
-
-        /* if (onBed == true)
-         {
-             if(movePlace == 1)
-                  anim.SetBool("UnderBed", true);
-             if (movePlace == 2)
-                 anim.SetBool("Wardrobe", true);
-
-             onBed = false;
-         }
-         else
-         {
-             anim.SetBool("UnderBed", false);
-             anim.SetBool("Wardrobe", false);
-             onBed = true;
-         }*/
+        if(Input.GetButtonDown("Fire1") && sleeping == false)
+        {
+            checkingBed = !checkingBed;
+            anim.SetBool("bedCheck", checkingBed);
+        }
+        if(checkingBed)
+        {
+            firstPersonCam.transform.localRotation = Quaternion.Slerp(firstPersonCam.transform.localRotation, Quaternion.Euler(0, -90, 0), Time.deltaTime * 5);
+        }
     }
 
     void CameraMovement()
@@ -94,21 +76,4 @@ public class PlayerCamera : MonoBehaviour
         firstPersonCam.transform.localRotation = Quaternion.Euler(rotatePitch, rotateYaw, 0);
     }
 
-    public int GetZone()
-    {
-        RaycastHit hit;
-
-        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit,Mathf.Infinity, zones))
-        {
-            Debug.Log(hit.transform.name);
-            if (hit.transform.name == "Bed Zone")
-                return 1;
-            else if (hit.transform.name == "Wardrobe")
-                return 2;
-            else
-                return 0;
-        }
-
-        return 0;
-    }
 }
