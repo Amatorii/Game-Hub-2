@@ -18,13 +18,12 @@ public class Yamez : MonsterFAB
     public override void Init()
     {
         eyecount = eyes.Length;
-        //eyecount = 69;
         startingTime = Mathf.Pow(3, 2.8f - .1f * GameManager.Instance.nightNo) - 4;
-        Debug.Log(startingTime);
         currentTime = startingTime;
         Eyetime = 3;
         eyesClosed = eyes.Length;
         timer = timeToOpen;
+
         ActionisComing = true;
     }
 
@@ -33,9 +32,6 @@ public class Yamez : MonsterFAB
         if (ActionisComing == false)
         {
             eyecount = eyes.Length;
-            //eyecount = 69;
-            startingTime = Mathf.Pow(3, 2.8f - .1f * GameManager.Instance.nightNo) - 4;
-            Debug.Log(startingTime);
             currentTime = startingTime;
             Eyetime = 3;
             eyesClosed = eyes.Length;

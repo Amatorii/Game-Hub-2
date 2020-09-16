@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Benedick : MonsterFAB
@@ -12,6 +13,8 @@ public class Benedick : MonsterFAB
     public bool checkForDeath;
     public override void Init()
     {
+        minValue = -9 * Mathf.Atan((0.9f * agression) - 4) + 55;
+        maxValue = -18 * Mathf.Atan((0.2f * agression) - 0.5f) + 75;
         Left();
     }
 
@@ -44,6 +47,11 @@ public class Benedick : MonsterFAB
         checkForDeath = true;
     }
 
+    public void Nani()
+    {
+        currentTime = -30;
+    }
+
     public void Killing()
     {
         if (gamer.sleeping == false)
@@ -61,5 +69,6 @@ public class Benedick : MonsterFAB
         checking = false;
         currentTime = Random.Range(minValue, maxValue);
         checkForDeath = false;
+        Debug.Log(currentTime);
     }
 }
