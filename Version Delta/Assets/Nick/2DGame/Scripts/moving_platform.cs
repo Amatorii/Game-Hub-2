@@ -32,6 +32,7 @@ public class moving_platform : MonoBehaviour
 
         if (platform.transform.position == currentPoint.position)
         {
+            Debug.Log("Changing");
             ChangePoint();
         }
         PlatformWait();
@@ -50,6 +51,14 @@ public class moving_platform : MonoBehaviour
                     pointSelection++;
                     reversing = false;
                 }
+            }else
+            {
+                pointSelection++;
+                if (pointSelection == points.Length)
+                {
+                    pointSelection--;
+                    reversing = true;
+                }
             }
         }
         else
@@ -57,8 +66,7 @@ public class moving_platform : MonoBehaviour
             pointSelection++;
             if (pointSelection == points.Length)
             {
-            pointSelection--;
-                reversing = true;
+                pointSelection = 0;
             }
         }
                 
