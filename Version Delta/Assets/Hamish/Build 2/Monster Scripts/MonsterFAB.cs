@@ -11,7 +11,7 @@ public abstract class MonsterFAB : MonoBehaviour
     protected int deltaTime;
     public int Mymurdertime; //Sets it's murder No. to send to the game manager
     public bool awake = false;
-    private int agression = GameManager.Instance.nightNo;
+    public int agression;
     public bool ActionisComing;
     public float minValue;
     public float maxValue;
@@ -21,6 +21,7 @@ public abstract class MonsterFAB : MonoBehaviour
     public virtual void Tick(float deltaTime) //It's private version of time
     {
         ActionisComing = true;
+        agression = GameManager.Instance.nightNo;
     }
 
     public virtual void seenquestion()

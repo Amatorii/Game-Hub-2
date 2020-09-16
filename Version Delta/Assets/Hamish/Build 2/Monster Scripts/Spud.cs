@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +17,9 @@ public class Spud : MonsterFAB
         windowPos = 0;
         Movespeed = 1;
         //startingtime = 1;
-        startingtime = Mathf.Pow(1.9f, 5.6f - 0.14f * GameManager.Instance.nightNo) + 5;
+        maxValue = Mathf.Pow(2.5f, 5.3f - 0.14f * agression) - 35;
+        minValue = Mathf.Pow(2.3f, 5.6f - 0.14f * agression) - 30;
+        currenttime = weightedRandom(minValue, maxValue);
     }
 
     public override void Tick(float deltaTime)
@@ -27,13 +28,26 @@ public class Spud : MonsterFAB
         ActionisComing = true;
     }
 
+    float weightedRandom(float min, float max)
+    {
+        float ans;
+        float roll1 = Random.Range(min, max);
+        float roll2 = Random.Range(min, max);
+        float roll3 = Random.Range(min, max);
+        float roll4 = Random.Range(min, max);
+
+        ans = Mathf.Max(roll1, roll2, roll3, roll4);
+
+        return ans;
+    }
+
     public void IMCOMING()
     {
         Window.position = Vector3.Lerp(windowClose.position, windowOpen.position, windowPos);
         if(ActionisComing == false)
         {
             transform.position = resetPoint.position;
-            currenttime = startingtime;
+            currenttime = weightedRandom(minValue, maxValue);
             Debug.Log("Spud Says No");
         }
         if (ActionisComing == true)
