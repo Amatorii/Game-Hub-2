@@ -208,7 +208,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8480181494056509864}
-  m_LocalRotation: {x: -0, y: -0.276472, z: -0, w: 0.96102196}
+  m_LocalRotation: {x: 0, y: -0.27647603, z: 0, w: 0.9610208}
   m_LocalPosition: {x: -0.012053646, y: 5.969, z: 2.4218986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -228,11 +228,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a7adbc24f49d6a4f87c246f0dfcf31d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MstAnime: {fileID: 0}
+  MstKill: {fileID: 0}
   monsterActive: 0
   Mymurdertime: 0
   awake: 0
+  agression: 0
   ActionisComing: 0
+  minValue: 0
+  maxValue: 0
   eyecount: 0
   startingTime: 0
   currentTime: 0
@@ -246,7 +249,6 @@ MonoBehaviour:
   - {fileID: 8480181494602216009}
   eyesClosed: 0
   timer: 0
-  timeToOpen: 1
   eyeOpen: {fileID: 2800000, guid: 9a64362bb4ee2294b9b3e2d118173b90, type: 3}
   eyeClosed: {fileID: 2800000, guid: 2cae3c9f00153904aa4407c5a2078265, type: 3}
 --- !u!1 &8480181494078385600

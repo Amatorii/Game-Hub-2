@@ -11,34 +11,41 @@ public class Yamez : MonsterFAB
     public MeshRenderer[] eyes;
     public int eyesClosed;
     public float timer;
-    public float timeToOpen = 1;
     public Texture eyeOpen;
     public Texture eyeClosed;
 
     public override void Init()
     {
-        eyecount = eyes.Length;
-        startingTime = Mathf.Pow(3, 2.8f - .1f * GameManager.Instance.nightNo) - 4;
-        currentTime = startingTime;
-        Eyetime = 3;
-        eyesClosed = eyes.Length;
-        timer = timeToOpen;
-
+        Mymurdertime = 3;
+        TimerReset();
         ActionisComing = true;
+    }
+
+    public void TimerReset()
+    {
+        maxValue = Mathf.Pow(2, 5 - 0.2f * agression) + 6;
+        minValue = Mathf.Pow(2, 5 - 0.2f * agression) + 2;
+        startingTime = Random.Range(minValue, maxValue);
+        Eyetime = Random.Range(7 - agression, 8 - agression);
+
+
+        currentTime = startingTime;
+        eyecount = eyes.Length;
+        eyesClosed = eyes.Length;
+        timer = Eyetime;
+        Closeeyes();
+        Debug.Log("Yamez is going to wait for " + startingTime);
+        Debug.Log("Yamez is going open eyes in " + Eyetime);
+
     }
 
     public override void Tick(float deltaTime)
     {
         if (ActionisComing == false)
         {
-            eyecount = eyes.Length;
-            currentTime = startingTime;
-            Eyetime = 3;
-            eyesClosed = eyes.Length;
-            timer = timeToOpen;
-            Closeeyes();
+            TimerReset();
         }
-        if(ActionisComing == true)
+        if (ActionisComing == true)
         {
             hereIcome();
         }
@@ -50,7 +57,7 @@ public class Yamez : MonsterFAB
         {
             eyesClosed -= 1;
             eyes[eyesClosed].material.SetTexture("_BaseMap", eyeOpen);
-            timer = timeToOpen;
+            timer = Random.Range(7 - agression, 8 - agression);
         }
         ActionisComing = true;
     }
@@ -61,7 +68,7 @@ public class Yamez : MonsterFAB
         {
             eyes[i].material.SetTexture("_BaseMap", eyeClosed);
         }
-    }    
+    }
 
     public void hereIcome()
     {
@@ -72,7 +79,7 @@ public class Yamez : MonsterFAB
         {
             Debug.Log(eyecount);
             eyecount -= 1;
-            currentTime = Eyetime;
+            currentTime = Random.Range(7 - agression, 8 - agression); ;
             if (eyecount <= 0)
             {
                 Debug.Log("U DED");

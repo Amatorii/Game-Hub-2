@@ -12,20 +12,26 @@ public class Spud : MonsterFAB
     public Transform resetPoint;
     public float startingtime;
     float currenttime;
+    public float deathTimer;
     public override void Init()
     {
+        Mymurdertime = 1;
         windowPos = 0;
         Movespeed = 1;
-        //startingtime = 1;
         maxValue = Mathf.Pow(2.5f, 5.3f - 0.14f * agression) - 35;
         minValue = Mathf.Pow(2.3f, 5.6f - 0.14f * agression) - 30;
         currenttime = weightedRandom(minValue, maxValue);
+        deathTimer = 6;
     }
 
     public override void Tick(float deltaTime)
     {
         IMCOMING();
         ActionisComing = true;
+        if(deathTimer < 0)
+        {
+            Kill();
+        }
     }
 
     float weightedRandom(float min, float max)
@@ -38,6 +44,7 @@ public class Spud : MonsterFAB
 
         ans = Mathf.Max(roll1, roll2, roll3, roll4);
 
+        Debug.Log(ans);
         return ans;
     }
 
@@ -48,11 +55,10 @@ public class Spud : MonsterFAB
         {
             transform.position = resetPoint.position;
             currenttime = weightedRandom(minValue, maxValue);
-            Debug.Log("Spud Says No");
+            deathTimer = 6;
         }
         if (ActionisComing == true)
         {
-            Debug.Log("Siggidy Swoodi");
             currenttime -= Time.deltaTime;
             if (currenttime <= 0)
             {
@@ -60,7 +66,7 @@ public class Spud : MonsterFAB
                 if (1 < windowPos)
                 {
                     transform.Translate(Vector3.forward * Time.deltaTime * Movespeed);
-
+                    deathTimer -= Time.deltaTime;
                 }
             }
         }

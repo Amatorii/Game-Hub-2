@@ -8,16 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Nick/Scenes/Main Menue.unity
     guid: dcc7443dfc9536d47bf188f8691c8cc4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Nick/Scenes/Game Over-Death Screen.unity
     guid: a1d4ab2c185c741468916e785f6073f5
+  - enabled: 1
+    path: Assets/Hamish/Scenes/Death Scene.unity
+    guid: dd2a5fa7233433d4a95b7c96860dbf3a
   - enabled: 1
     path: Assets/Ultron Assemble/Colaberation Scene.unity
     guid: eae35d9c2d25d5449a2c83a7fa371faa
   - enabled: 1
     path: Assets/Nick/2DGame/Scenes/Frist.unity
     guid: 47ca27f083ac3d2489d1fc442800c814
-  - enabled: 1
-    path: Assets/Nick/2DGame/Scenes/Second.unity
-    guid: 732742a8a2b139e49835ee678e0ec025
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

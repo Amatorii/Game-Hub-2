@@ -19,8 +19,7 @@ public class Albert : MonsterFAB
     {
         if (moving == false)
         {
-            currenttime = startingtime; //lazy way to stop the monster from moving
-            Debug.Log("Not Moving - A");
+            TimerReset();
             transform.position = resetPoint.position;
         }
         if (moving == true)
@@ -47,16 +46,20 @@ public class Albert : MonsterFAB
     {
             AlbertSounds.clip = AlbertChant;
             AlbertSounds.Play();
-            Debug.Log("He Be Singing");
     }
     //public virtual 
     public override void Init()
+    {
+        Mymurdertime = 4;
+        TimerReset();
+        Chant();
+    }
+    public void TimerReset()
     {
         maxValue = Mathf.Pow(2.5f, 5.3f - 0.14f * agression) - 35;
         minValue = Mathf.Pow(2.3f, 5.6f - 0.14f * agression) - 30;
         startingtime = Random.Range(minValue, maxValue);
         currenttime = startingtime;
-        Chant();
     }
 }
 

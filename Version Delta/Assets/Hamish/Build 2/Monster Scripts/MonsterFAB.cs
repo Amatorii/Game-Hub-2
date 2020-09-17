@@ -6,8 +6,6 @@ using UnityEngine;
 
 public abstract class MonsterFAB : MonoBehaviour
 {
-    public Animator MstKill; //Animation for movement
-    public int monsterActive; //Is it active
     protected int deltaTime;
     public int Mymurdertime; //Sets it's murder No. to send to the game manager
     public bool awake = false;
@@ -22,6 +20,12 @@ public abstract class MonsterFAB : MonoBehaviour
     {
         ActionisComing = true;
         agression = GameManager.Instance.nightNo;
+    }
+
+    public void Kill()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        GameManager.Instance.TimetoDie(Mymurdertime);
     }
 
     public virtual void seenquestion()
