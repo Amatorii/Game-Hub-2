@@ -12,6 +12,7 @@ public class UWEEN : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         GameManager.Instance.Gamewin();
+        
     }
 
     // Update is called once per frame
