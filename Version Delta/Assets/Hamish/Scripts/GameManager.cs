@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public void Gamewin()
     {
         nightNo++;
-       /* if(nightNo <= LevelData.Length)
+        if(nightNo <= LevelData.Length)
         {
             Load2DGame();
         }
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         {
             nightNo = 0;
             Load2DGame();
-        }*/
+        }
         Debug.Log("Night Completed");
         Init();
     }
