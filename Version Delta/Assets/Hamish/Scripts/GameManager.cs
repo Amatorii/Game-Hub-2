@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance;
     public MonsterFAB[] monsters;
-    public int nightNo = 6;
+    public int nightNo;
     public LevelData[] levelData;
     float deltaTime;
     public float rollcall;
@@ -24,13 +24,13 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         Instance = this;
+        nightNo = 1;
         Init();
     }
 
     public void Init()
     {
         GameRunning = true;
-        nightNo = 1;
         //Debug.Log(levelData[nightNo-1].AlbertLevel);
 
         for (int i = 0; i < monsters.Length; i++)
@@ -43,13 +43,29 @@ public class GameManager : MonoBehaviour
 
     public void Gamewin()
     {
-        SceneManager.LoadScene(5);
+        nightNo++;
+        if(nightNo <= LevelData.Length)
+        {
+            Load2DGame();
+        }
+        else
+        {
+            nightNo = 0;
+            Load2DGame();
+        }
+        Debug.Log("Night Completed");
+        Init();
     }
 
     public void Load2DGame()
     {
-       // SceneManager.LoadSceneAsync(levelData[nightNo - 1].GameLevel, LoadSceneMode.Additive);
+       SceneManager.LoadSceneAsync(levelData[nightNo - 1].GameLevel, LoadSceneMode.Additive);
     } 
+
+    void unload2dGame()
+    {
+        
+    }
 
     public float Nights(int nightNo)
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class flashlight : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class flashlight : MonoBehaviour
     public float batteryPower = 100;
     public float batteryUsage = 10;
     public PlayerCamera gamer;
+    public Image bar;
     void Awake()
     {
         flashlightAsset.gameObject.SetActive(FlashLightOn);
@@ -31,7 +33,9 @@ public class flashlight : MonoBehaviour
         if(FlashLightOn)
         {
             batteryPower -= batteryUsage * Time.deltaTime;
-            if(batteryPower < 0) {
+            bar.fillAmount = batteryPower / 100;
+            if (batteryPower < 0)
+            {
                 flashlightAsset.gameObject.SetActive(false);
             }
         }
