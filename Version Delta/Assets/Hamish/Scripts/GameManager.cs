@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public void Gamewin()
     {
         nightNo++;
-        if(nightNo <= LevelData.Length)
+        if(nightNo <= levelData.Length)
         {
             Load2DGame();
         }
@@ -76,6 +76,11 @@ public class GameManager : MonoBehaviour
     public void EndNight()
     {
         Debug.Log("EndNight");
+    }
+
+    public void GameOver()
+    {
+        
     }
 
     public void TimetoDie(int murderTime)

@@ -49,7 +49,8 @@ public class Albert : MonsterFAB
     }
     //public virtual 
     public override void Init()
-    {
+    {   
+        base.Init();
         Mymurdertime = 4;
         TimerReset();
         Chant();

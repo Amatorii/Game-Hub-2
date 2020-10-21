@@ -16,6 +16,7 @@ public class Yamez : MonsterFAB
 
     public override void Init()
     {
+        base.Init();
         Mymurdertime = 3;
         TimerReset();
         ActionisComing = true;

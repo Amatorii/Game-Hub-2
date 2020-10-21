@@ -36,6 +36,8 @@ public class flashlight : MonoBehaviour
             bar.fillAmount = batteryPower / 100;
             if (batteryPower < 0)
             {
+                FlashLightOn = false;
+                GameManager.Instance.GameOver();
                 flashlightAsset.gameObject.SetActive(false);
             }
         }

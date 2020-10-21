@@ -13,6 +13,7 @@ public class Benedick : MonsterFAB
     public bool checkForDeath;
     public override void Init()
     {
+        base.Init();
         Mymurdertime = 2;
         minValue = -9 * Mathf.Atan((0.9f * agression) - 4) + 55;
         maxValue = -18 * Mathf.Atan((0.2f * agression) - 0.5f) + 75;

@@ -15,6 +15,7 @@ public class Spud : MonsterFAB
     public float deathTimer;
     public override void Init()
     {
+        base.Init();
         Mymurdertime = 1;
         windowPos = 0;
         Movespeed = 1;

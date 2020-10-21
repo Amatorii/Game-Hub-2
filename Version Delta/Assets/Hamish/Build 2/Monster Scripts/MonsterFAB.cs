@@ -14,7 +14,13 @@ public abstract class MonsterFAB : MonoBehaviour
     public float minValue;
     public float maxValue;
 
-    public abstract void Init();
+    public virtual void Init()
+    {
+        if(Mymurdertime < GameManager.Instance.nightNo)
+        {
+            return;
+        }
+    }
 
     public virtual void Tick(float deltaTime) //It's private version of time
     {
