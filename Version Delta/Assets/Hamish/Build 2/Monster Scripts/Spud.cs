@@ -45,7 +45,7 @@ public class Spud : MonsterFAB
 
         ans = Mathf.Max(roll1, roll2, roll3, roll4);
 
-        Debug.Log(ans);
+        //Debug.Log(ans);
         return ans;
     }
 

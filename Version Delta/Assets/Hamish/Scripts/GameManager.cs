@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         Instance = this;
-        nightNo = 1;
+        nightNo = 0;
         Init();
     }
 
@@ -37,14 +37,13 @@ public class GameManager : MonoBehaviour
          {
              monsters[i].Init();
          }
-        Load2DGame();
         GameObject.FindObjectOfType<flashlight>().batteryPower = 100;
     }
 
     public void Gamewin()
-    {
-        nightNo++;
+    { 
         unload2dGame();
+        nightNo++;
         if(nightNo <= levelData.Length)
         {
             Load2DGame();
@@ -60,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void Load2DGame()
     {
-       SceneManager.LoadSceneAsync(levelData[nightNo - 1].GameLevel, LoadSceneMode.Additive);
+       SceneManager.LoadSceneAsync(levelData[nightNo].GameLevel, LoadSceneMode.Additive);
     } 
 
     void unload2dGame()
