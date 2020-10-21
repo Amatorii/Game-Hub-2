@@ -16,7 +16,8 @@ public class Yamez : MonsterFAB
 
     public override void Init()
     {
-        if(Mymurdertime < GameManager.Instance.nightNo)
+        Debug.Log(Mymurdertime + " : " + GameManager.Instance.nightNo);
+        if (Mymurdertime > GameManager.Instance.nightNo)
         {
             return;
         }
@@ -44,6 +45,11 @@ public class Yamez : MonsterFAB
 
     public override void Tick(float deltaTime)
     {
+        if (Mymurdertime > GameManager.Instance.nightNo)
+        { 
+            return;
+        }
+
         if (ActionisComing == false)
         {
             TimerReset();

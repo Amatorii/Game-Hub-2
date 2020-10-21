@@ -13,7 +13,7 @@ public class Benedick : MonsterFAB
     public bool checkForDeath;
     public override void Init()
     {
-        if(Mymurdertime < GameManager.Instance.nightNo)
+        if(Mymurdertime > GameManager.Instance.nightNo)
         {
             return;
         }
@@ -30,6 +30,10 @@ public class Benedick : MonsterFAB
 
     public override void Tick(float deltaTime)
     {
+        if (Mymurdertime > GameManager.Instance.nightNo)
+        {
+            return;
+        }
         CzecTimer();
     }
 

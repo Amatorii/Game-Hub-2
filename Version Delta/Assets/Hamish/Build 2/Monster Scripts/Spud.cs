@@ -13,12 +13,16 @@ public class Spud : MonsterFAB
     public float startingtime;
     float currenttime;
     public float deathTimer;
+    public GameObject model;
+
     public override void Init()
     {
-        if(Mymurdertime < GameManager.Instance.nightNo)
-        {
+        if(Mymurdertime > GameManager.Instance.nightNo)
+        { 
+            model.SetActive(false);
             return;
         }
+        model.SetActive(true);
         windowPos = 0;
         Movespeed = 1;
         maxValue = Mathf.Pow(2.5f, 5.3f - 0.14f * agression) - 90;
@@ -29,6 +33,11 @@ public class Spud : MonsterFAB
 
     public override void Tick(float deltaTime)
     {
+        if (Mymurdertime > GameManager.Instance.nightNo)
+        {
+            return;
+        }
+
         IMCOMING();
         ActionisComing = true;
         if(deathTimer < 0)

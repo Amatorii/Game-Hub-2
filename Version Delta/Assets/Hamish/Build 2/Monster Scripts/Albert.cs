@@ -34,6 +34,11 @@ public class Albert : MonsterFAB
     }
     public override void Tick(float deltaTime)
     {
+        if (Mymurdertime > GameManager.Instance.nightNo)
+        {
+            return;
+        }
+
         Moving();
         moving = true;
         if(ActionisComing == false)
@@ -50,7 +55,7 @@ public class Albert : MonsterFAB
     //public virtual 
     public override void Init()
     {   
-        if(Mymurdertime < GameManager.Instance.nightNo)
+        if(Mymurdertime > GameManager.Instance.nightNo)
         {
             return;
         }

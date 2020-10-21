@@ -1190,7 +1190,7 @@ PrefabInstance:
     - target: {fileID: 2276084061651828676, guid: f7193edc327fb4d498f00daa4ee12f39,
         type: 3}
       propertyPath: Mymurdertime
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2276084061651828677, guid: f7193edc327fb4d498f00daa4ee12f39,
         type: 3}
@@ -1585,6 +1585,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TV80 V2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549427086564485544, guid: d2f251f636f6a0645bd0cc075a2026a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549427086564485559, guid: d2f251f636f6a0645bd0cc075a2026a3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.029
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2f251f636f6a0645bd0cc075a2026a3, type: 3}
@@ -7447,6 +7457,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 706335340}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1851692390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5049492513288489563, guid: 47941e3b86996a6419e1489261547de4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1958029874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1912035677
 GameObject:
   m_ObjectHideFlags: 0
@@ -7571,6 +7587,11 @@ PrefabInstance:
       propertyPath: Mymurdertime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8198051915757558140, guid: 47941e3b86996a6419e1489261547de4,
+        type: 3}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 1851692390}
     - target: {fileID: 8198051915757558141, guid: 47941e3b86996a6419e1489261547de4,
         type: 3}
       propertyPath: m_Name
