@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public void Init()
     {
+                Debug.Log(nightNo);
         GameRunning = true;
         //Debug.Log(levelData[nightNo-1].AlbertLevel);
 

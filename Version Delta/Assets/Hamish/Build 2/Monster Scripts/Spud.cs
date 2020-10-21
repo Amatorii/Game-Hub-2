@@ -40,10 +40,8 @@ public class Spud : MonsterFAB
         float ans;
         float roll1 = Random.Range(min, max);
         float roll2 = Random.Range(min, max);
-        float roll3 = Random.Range(min, max);
-        float roll4 = Random.Range(min, max);
 
-        ans = Mathf.Max(roll1, roll2, roll3, roll4);
+        ans = Mathf.Max(roll1, roll2);
 
         //Debug.Log(ans);
         return ans;
