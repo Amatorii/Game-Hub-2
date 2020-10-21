@@ -14,6 +14,9 @@ public class Spud : MonsterFAB
     float currenttime;
     public float deathTimer;
     public GameObject model;
+    public AudioSource SpudSounds;
+    public AudioClip window;
+    public bool playingAudio;
 
     public override void Init()
     {
@@ -29,6 +32,7 @@ public class Spud : MonsterFAB
         minValue = Mathf.Pow(2.3f, 5.6f - 0.14f * agression) - 70;
         currenttime = weightedRandom(minValue, maxValue);
         deathTimer = 6;
+        playingAudio = false;
     }
 
     public override void Tick(float deltaTime)
@@ -58,11 +62,24 @@ public class Spud : MonsterFAB
         return ans;
     }
 
+    public void AudioPlaying()
+    {
+        SpudSounds.clip = window;
+        if(currenttime <= 0 && playingAudio == false && 1 < windowPos)
+        {
+            playingAudio = true;
+            SpudSounds.Play();
+            Debug.Log("Playing");
+        }
+    }
+
     public void IMCOMING()
     {
         Window.position = Vector3.Lerp(windowClose.position, windowOpen.position, windowPos);
         if(ActionisComing == false)
         {
+            playingAudio = false;
+            SpudSounds.Stop();            
             transform.position = resetPoint.position;
             currenttime = weightedRandom(minValue, maxValue);
             deathTimer = 6;
@@ -72,6 +89,7 @@ public class Spud : MonsterFAB
             currenttime -= Time.deltaTime;
             if (currenttime <= 0)
             {
+                AudioPlaying();
                 windowPos += 0.3f * Time.deltaTime;
                 if (1 < windowPos)
                 {
