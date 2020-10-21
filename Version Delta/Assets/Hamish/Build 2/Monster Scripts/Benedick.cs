@@ -91,10 +91,11 @@ public class Benedick : MonsterFAB
     }
 
     public void Left()
-    {
+    { 
         checking = false;
+        Anim.SetBool("checking", checking);
         currentTime = Random.Range(minValue, maxValue);
         checkForDeath = false;
-        Debug.Log(currentTime);
+        Debug.Log("New Wait " + currentTime);
     }
 }
