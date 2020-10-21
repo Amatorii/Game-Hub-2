@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         nightNo = 0;
         Init();
+        Load2DGame();
     }
 
     public void Init()
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
     { 
         unload2dGame();
         nightNo++;
-        if(nightNo <= levelData.Length)
+        if(nightNo < levelData.Length)
         {
             Load2DGame();
         }
