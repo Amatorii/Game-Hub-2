@@ -16,8 +16,10 @@ public class Yamez : MonsterFAB
 
     public override void Init()
     {
-        base.Init();
-        Mymurdertime = 3;
+        if(Mymurdertime < GameManager.Instance.nightNo)
+        {
+            return;
+        }
         TimerReset();
         ActionisComing = true;
     }

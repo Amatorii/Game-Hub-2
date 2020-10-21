@@ -50,8 +50,10 @@ public class Albert : MonsterFAB
     //public virtual 
     public override void Init()
     {   
-        base.Init();
-        Mymurdertime = 4;
+        if(Mymurdertime < GameManager.Instance.nightNo)
+        {
+            return;
+        }
         TimerReset();
         Chant();
     }

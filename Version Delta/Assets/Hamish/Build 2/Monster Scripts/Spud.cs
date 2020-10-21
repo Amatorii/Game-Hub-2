@@ -15,8 +15,10 @@ public class Spud : MonsterFAB
     public float deathTimer;
     public override void Init()
     {
-        base.Init();
-        Mymurdertime = 1;
+        if(Mymurdertime < GameManager.Instance.nightNo)
+        {
+            return;
+        }
         windowPos = 0;
         Movespeed = 1;
         maxValue = Mathf.Pow(2.5f, 5.3f - 0.14f * agression) - 90;
