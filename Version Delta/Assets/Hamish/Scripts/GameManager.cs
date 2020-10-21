@@ -24,12 +24,14 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         Instance = this;
-        nightNo = 1;
+        nightNo = 0;
         Init();
+        Load2DGame();
     }
 
     public void Init()
     {
+                Debug.Log(nightNo);
         GameRunning = true;
         //Debug.Log(levelData[nightNo-1].AlbertLevel);
 
@@ -37,14 +39,14 @@ public class GameManager : MonoBehaviour
          {
              monsters[i].Init();
          }
-  //      GameData.Instance.murdertime = 0;
-        Load2DGame();
+        GameObject.FindObjectOfType<flashlight>().batteryPower = 100;
     }
 
     public void Gamewin()
-    {
+    { 
+        unload2dGame();
         nightNo++;
-        if(nightNo <= levelData.Length)
+        if(nightNo < levelData.Length)
         {
             Load2DGame();
         }
@@ -59,12 +61,12 @@ public class GameManager : MonoBehaviour
 
     public void Load2DGame()
     {
-       SceneManager.LoadSceneAsync(levelData[nightNo - 1].GameLevel, LoadSceneMode.Additive);
+       SceneManager.LoadSceneAsync(levelData[nightNo].GameLevel, LoadSceneMode.Additive);
     } 
 
     void unload2dGame()
     {
-        
+        SceneManager.UnloadSceneAsync(levelData[nightNo].GameLevel);
     }
 
     public float Nights(int nightNo)
@@ -121,6 +123,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
         deltaTime = Time.deltaTime;
          for (int i = 0; i < monsters.Length; i++)
          {

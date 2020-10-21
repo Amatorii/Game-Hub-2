@@ -16,7 +16,7 @@ public abstract class MonsterFAB : MonoBehaviour
 
     public virtual void Init()
     {
-        if(Mymurdertime < GameManager.Instance.nightNo)
+        if(Mymurdertime > GameManager.Instance.nightNo)
         {
             return;
         }

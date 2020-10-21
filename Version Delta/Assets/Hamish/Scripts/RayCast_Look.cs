@@ -32,7 +32,7 @@ public class RayCast_Look : MonoBehaviour
             if (Exlamation != null && Light.FlashLightOn==true)
             {
                 Exlamation.See();
-                Debug.Log("checked");
+                //Debug.Log("checked");
             }
         }
     }

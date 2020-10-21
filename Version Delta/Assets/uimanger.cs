@@ -10,6 +10,9 @@ public class uimanger : MonoBehaviour
         SceneManager.LoadScene(levelname);
 
     }
-    
+    public void Exit()
+    {
+        Application.Quit();
+    }
 
 }
