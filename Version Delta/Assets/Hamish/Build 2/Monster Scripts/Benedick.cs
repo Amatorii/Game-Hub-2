@@ -11,6 +11,9 @@ public class Benedick : MonsterFAB
     public Animator Anim;
     public bool checking;
     public bool checkForDeath;
+    public AudioSource BenedickSounds;
+    public AudioClip walking;
+    public bool playingAudio;
     public override void Init()
     {
         if(Mymurdertime > GameManager.Instance.nightNo)
@@ -35,6 +38,19 @@ public class Benedick : MonsterFAB
             return;
         }
         CzecTimer();
+        BenedickSounds.clip = walking;
+        if(checking == true && playingAudio == false)
+        {
+            playingAudio = true;
+            BenedickSounds.Play();
+            Debug.Log("Playing");
+        }
+        else if(checking == false && playingAudio == true)
+        {
+            playingAudio = false;
+            BenedickSounds.Stop();
+            Debug.Log("Stop");
+        }
     }
 
     public void CzecTimer()
@@ -44,6 +60,7 @@ public class Benedick : MonsterFAB
         {
             checking = true;
             Anim.SetBool("checking", checking);
+            
         }
         if(checkForDeath == true)
         {
