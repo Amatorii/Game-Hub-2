@@ -19,8 +19,8 @@ public class Spud : MonsterFAB
         Mymurdertime = 1;
         windowPos = 0;
         Movespeed = 1;
-        maxValue = Mathf.Pow(2.5f, 5.3f - 0.14f * agression) - 35;
-        minValue = Mathf.Pow(2.3f, 5.6f - 0.14f * agression) - 30;
+        maxValue = Mathf.Pow(2.5f, 5.3f - 0.14f * agression) - 75;
+        minValue = Mathf.Pow(2.3f, 5.6f - 0.14f * agression) - 70;
         currenttime = weightedRandom(minValue, maxValue);
         deathTimer = 6;
     }

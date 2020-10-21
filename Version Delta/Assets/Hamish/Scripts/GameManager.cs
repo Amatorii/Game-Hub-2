@@ -37,13 +37,14 @@ public class GameManager : MonoBehaviour
          {
              monsters[i].Init();
          }
-  //      GameData.Instance.murdertime = 0;
         Load2DGame();
+        GameObject.FindObjectOfType<flashlight>().batteryPower = 100;
     }
 
     public void Gamewin()
     {
         nightNo++;
+        unload2dGame();
         if(nightNo <= levelData.Length)
         {
             Load2DGame();
@@ -64,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     void unload2dGame()
     {
-        
+        SceneManager.UnloadSceneAsync(levelData[nightNo].GameLevel);
     }
 
     public float Nights(int nightNo)

@@ -11,6 +11,7 @@ public class flashlight : MonoBehaviour
     public float batteryUsage = 10;
     public PlayerCamera gamer;
     public Image bar;
+    
     void Awake()
     {
         flashlightAsset.gameObject.SetActive(FlashLightOn);
