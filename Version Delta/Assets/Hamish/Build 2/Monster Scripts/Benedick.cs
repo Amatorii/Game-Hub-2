@@ -14,8 +14,12 @@ public class Benedick : MonsterFAB
     public AudioSource BenedickSounds;
     public AudioClip walking;
     public bool playingAudio;
-    public override void Init()
+    float lastPos;
+    bool isMoving = false;
+
+    public override void Init() 
     {
+        lastPos = transform.position.x;
         if(Mymurdertime > GameManager.Instance.nightNo)
         {
             return;
@@ -24,33 +28,51 @@ public class Benedick : MonsterFAB
         minValue = -9 * Mathf.Atan((0.9f * agression) - 4) + 15;
         maxValue = -18 * Mathf.Atan((0.2f * agression) - 0.5f) + 35;
         Left();
+        Vector3 pos = transform.position;
     }
 
     public void Start()
     {
         Anim = GetComponent<Animator>();
+        lastPos = transform.position.x;
+    }
+
+    public void ChecMoving()
+    {
+        if(lastPos != transform.position.x)
+        {
+            isMoving = true;
+            Debug.Log("He shmovin");
+        }
+        else
+        {
+            isMoving = false;
+            Debug.Log("No Shmovement");
+        }
+        lastPos = transform.position.x;
     }
 
     public override void Tick(float deltaTime)
     {
+        ChecMoving();
         if (Mymurdertime > GameManager.Instance.nightNo)
         {
             return;
         }
         CzecTimer();
-        BenedickSounds.clip = walking;
-        if(checking == true && playingAudio == false)
-        {
-            playingAudio = true;
-            BenedickSounds.Play();
-            Debug.Log("Playing");
-        }
-        else if(checking == false && playingAudio == true)
-        {
-            playingAudio = false;
-            BenedickSounds.Stop();
-            Debug.Log("Stop");
-        }
+            BenedickSounds.clip = walking;
+            if(isMoving == true && playingAudio == false && currentTime <=0)
+                {
+                playingAudio = true;
+                BenedickSounds.Play();
+                Debug.Log("Playing");
+                }
+             else
+            {
+                playingAudio = false;
+                BenedickSounds.Stop();
+                Debug.Log("Stop");
+            }
     }
 
     public void CzecTimer()
@@ -60,7 +82,7 @@ public class Benedick : MonsterFAB
         {
             checking = true;
             Anim.SetBool("checking", checking);
-            
+
         }
         if(checkForDeath == true)
         {
@@ -68,7 +90,7 @@ public class Benedick : MonsterFAB
         }
     }
 
-    public void CheckForDeath()
+    void CheckForDeath()
     {
         checkForDeath = true;
     }
@@ -78,7 +100,7 @@ public class Benedick : MonsterFAB
         currentTime = -30;
     }
 
-    public void Killing()
+    void Killing()
     {
         if (gamer.sleeping == false)
         {

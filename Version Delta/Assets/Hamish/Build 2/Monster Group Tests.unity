@@ -1190,7 +1190,7 @@ PrefabInstance:
     - target: {fileID: 2276084061651828676, guid: f7193edc327fb4d498f00daa4ee12f39,
         type: 3}
       propertyPath: Mymurdertime
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2276084061651828676, guid: f7193edc327fb4d498f00daa4ee12f39,
         type: 3}
@@ -6076,6 +6076,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340551838}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1395247266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8480181494622890895, guid: 30d79c2e6171e184ca36b9656b2a8f27,
+    type: 3}
+  m_PrefabInstance: {fileID: 1667963192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400836322
 GameObject:
   m_ObjectHideFlags: 0
@@ -7306,6 +7312,11 @@ PrefabInstance:
       propertyPath: Mymurdertime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8480181494056509870, guid: 30d79c2e6171e184ca36b9656b2a8f27,
+        type: 3}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 1395247266}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30d79c2e6171e184ca36b9656b2a8f27, type: 3}
 --- !u!1 &1680688722
@@ -7849,7 +7860,7 @@ PrefabInstance:
     - target: {fileID: 8198051915757558140, guid: 47941e3b86996a6419e1489261547de4,
         type: 3}
       propertyPath: Mymurdertime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8198051915757558140, guid: 47941e3b86996a6419e1489261547de4,
         type: 3}

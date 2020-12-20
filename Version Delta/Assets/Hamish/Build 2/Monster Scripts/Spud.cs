@@ -41,7 +41,7 @@ public class Spud : MonsterFAB
         {
             return;
         }
-
+        AudioPlaying();
         IMCOMING();
         ActionisComing = true;
         if(deathTimer < 0)
@@ -65,7 +65,8 @@ public class Spud : MonsterFAB
     public void AudioPlaying()
     {
         SpudSounds.clip = window;
-        if(currenttime <= 0 && playingAudio == false && 1 < windowPos)
+        Debug.Log("Sound");
+        if(playingAudio == false && 0 < windowPos && currenttime < 0)
         {
             playingAudio = true;
             SpudSounds.Play();
@@ -89,12 +90,12 @@ public class Spud : MonsterFAB
             currenttime -= Time.deltaTime;
             if (currenttime <= 0)
             {
-                AudioPlaying();
-                windowPos += 0.3f * Time.deltaTime;
+                windowPos += 0.1f * Time.deltaTime;
                 if (1 < windowPos)
                 {
                     transform.Translate(Vector3.forward * Time.deltaTime * Movespeed);
                     deathTimer -= Time.deltaTime;
+                    playingAudio = false;
                 }
             }
         }

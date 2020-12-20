@@ -13,14 +13,17 @@ public class Yamez : MonsterFAB
     public float timer;
     public Texture eyeOpen;
     public Texture eyeClosed;
+    public GameObject model;
 
     public override void Init()
     {
         Debug.Log(Mymurdertime + " : " + GameManager.Instance.nightNo);
         if (Mymurdertime > GameManager.Instance.nightNo)
         {
+            model.SetActive(false);
             return;
         }
+        model.SetActive(true);
         TimerReset();
         ActionisComing = true;
     }
