@@ -65,12 +65,10 @@ public class Spud : MonsterFAB
     public void AudioPlaying()
     {
         SpudSounds.clip = window;
-        Debug.Log("Sound");
         if(playingAudio == false && 0 < windowPos && currenttime < 0)
         {
             playingAudio = true;
             SpudSounds.Play();
-            Debug.Log("Playing");
         }
     }
 

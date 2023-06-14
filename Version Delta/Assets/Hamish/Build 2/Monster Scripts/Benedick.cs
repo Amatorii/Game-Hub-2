@@ -24,7 +24,6 @@ public class Benedick : MonsterFAB
         {
             return;
         }
-        Debug.Log("Benedick Says Hi");
         minValue = -9 * Mathf.Atan((0.9f * agression) - 4) + 15;
         maxValue = -18 * Mathf.Atan((0.2f * agression) - 0.5f) + 35;
         Left();
@@ -42,37 +41,34 @@ public class Benedick : MonsterFAB
         if(lastPos != transform.position.x)
         {
             isMoving = true;
-            Debug.Log("He shmovin");
         }
         else
         {
             isMoving = false;
-            Debug.Log("No Shmovement");
         }
         lastPos = transform.position.x;
     }
 
     public override void Tick(float deltaTime)
     {
-        ChecMoving();
         if (Mymurdertime > GameManager.Instance.nightNo)
         {
             return;
         }
         CzecTimer();
             BenedickSounds.clip = walking;
-            if(isMoving == true && playingAudio == false && currentTime <=0)
+            if(isMoving == true)
                 {
-                playingAudio = true;
-                BenedickSounds.Play();
-                Debug.Log("Playing");
+                    if(!BenedickSounds.isPlaying)
+                        BenedickSounds.Play();
+                    Debug.Log("Benedick is walking");
                 }
              else
             {
-                playingAudio = false;
                 BenedickSounds.Stop();
-                Debug.Log("Stop");
+                Debug.Log("Benedick isn't walking");
             }
+        ChecMoving();
     }
 
     public void CzecTimer()

@@ -59,6 +59,7 @@ public class Albert : MonsterFAB
         {
             return;
         }
+        Debug.Log("Albert is Active");
         TimerReset();
         Chant();
     }

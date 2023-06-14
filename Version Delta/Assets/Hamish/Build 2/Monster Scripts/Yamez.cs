@@ -38,6 +38,7 @@ public class Yamez : MonsterFAB
 
         currentTime = startingTime;
         eyecount = eyes.Length;
+        Debug.Log("BUGFIX: Yamez Eyecount = " + eyecount);
         eyesClosed = eyes.Length;
         timer = Eyetime;
         Closeeyes();
@@ -88,6 +89,7 @@ public class Yamez : MonsterFAB
         {
             eyecount -= 1;
             currentTime = Random.Range(7 - agression, 8 - agression); ;
+            Debug.Log("DEBUG: Yamez has just opened his eyes. His Eyecount is = " + eyecount);
             if (eyecount <= 0)
             {
                 Debug.Log("Yamez Killed you");

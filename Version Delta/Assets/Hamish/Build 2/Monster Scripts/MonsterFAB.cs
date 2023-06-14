@@ -31,6 +31,7 @@ public abstract class MonsterFAB : MonoBehaviour
     public void Kill()
     {
         Cursor.lockState = CursorLockMode.None;
+        Debug.Log("Monster " + Mymurdertime + " has killed you");
         GameManager.Instance.TimetoDie(Mymurdertime);
     }
 
