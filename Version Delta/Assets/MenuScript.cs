@@ -23,7 +23,7 @@ public class MenuScript : MonoBehaviour
             deathText.text = "No game data instances";
             return;
         }
-        this.define = GameData.Instance.murdertime;
+        this.define = GameData.murdertime;
         Debug.Log(define);
         if(define == 1)
         {
@@ -40,6 +40,9 @@ public class MenuScript : MonoBehaviour
         else if (define == 4)
         {
             deathText.text = "Refuse to be defined by the worst of you";
+        }
+        else if (define == 0){
+            deathText.text = "Define = 0";
         }
         else
         {

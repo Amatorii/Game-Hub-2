@@ -91,11 +91,13 @@ public class Spud : MonsterFAB
             if (currenttime <= 0)
             {
                 windowPos += 0.1f * Time.deltaTime;
+                Debug.Log("I'm opening the window");
                 if (1 < windowPos)
                 {
                     transform.Translate(Vector3.forward * Time.deltaTime * Movespeed);
                     deathTimer -= Time.deltaTime;
                     playingAudio = false;
+                    Debug.Log("I'm climbing through");
                 }
             }
         }

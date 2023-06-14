@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public string game2DSceneName;
     public int DeathNo;
     public bool GameRunning;
+
     void Start()
     {
         if (Instance != null)
@@ -24,14 +25,13 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         Instance = this;
-        nightNo = 0;
         Init();
         Load2DGame();
     }
 
     public void Init()
     {
-                Debug.Log(nightNo);
+        Debug.Log("Night Number = " + nightNo);
         GameRunning = true;
         //Debug.Log(levelData[nightNo-1].AlbertLevel);
 
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            nightNo = 0;
+            nightNo = 4;
             Load2DGame();
         }
         Debug.Log("Night Completed");
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void Load2DGame()
     {
-       SceneManager.LoadSceneAsync(levelData[nightNo].GameLevel, LoadSceneMode.Additive);
+       SceneManager.LoadSceneAsync(levelData[1].GameLevel, LoadSceneMode.Additive);
     } 
 
     void unload2dGame()
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
     public void TimetoDie(int murderTime)
     {
         GameRunning = false;
-        GameData.Instance.murdertime = murderTime;
+        GameData.Instance.SetMurderTime(murderTime);
         if (murderTime == 0)
         {
            Debug.Log("It's chill");//working
@@ -99,34 +99,37 @@ public class GameManager : MonoBehaviour
         }
         if(murderTime == 1)
         {
-            Debug.Log("Spud Says Hi");
+            Debug.Log("Spud killed you");
             //Spud's Scene "Refuse to be defined by the opinions and coersions of others"
         }
         if(murderTime == 2)
         {
-            Debug.Log("Eye spy ur gonna die");
+            Debug.Log("Yamez killed You");
             //Yamez's scene "Refuse to be defined by your greatest fears"
         }
         if(murderTime == 3)
         {
-            Debug.Log("Benedick Says goodnight");
+            Debug.Log("Benedick killed you");
             //Benedick's Scene "Refuse to be defined by domestic abuse and expectation"
         }
         if (murderTime == 4)
         {
-            Debug.Log("Albert is the Man");
+            Debug.Log("Albert killed you");
             //working
             //SceneManager.LoadScene(1); Albert's Scene "Refuse to be defined by the worst of you"
         }
+        Debug.Log("Murder Time = " + murderTime);
         SceneManager.LoadScene(1);
     }
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(0);
         }
+        */
         deltaTime = Time.deltaTime;
          for (int i = 0; i < monsters.Length; i++)
          {

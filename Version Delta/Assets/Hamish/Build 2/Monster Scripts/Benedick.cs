@@ -118,5 +118,6 @@ public class Benedick : MonsterFAB
         Anim.SetBool("checking", checking);
         currentTime = Random.Range(minValue, maxValue);
         checkForDeath = false;
+        Debug.Log("You can wake up");
     }
 }

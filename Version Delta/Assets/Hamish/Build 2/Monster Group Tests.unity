@@ -601,7 +601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dcb634579591dc41a69a10f257b1878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  murdertime: 0
 --- !u!4 &150558088
 Transform:
   m_ObjectHideFlags: 0
@@ -1190,7 +1189,7 @@ PrefabInstance:
     - target: {fileID: 2276084061651828676, guid: f7193edc327fb4d498f00daa4ee12f39,
         type: 3}
       propertyPath: Mymurdertime
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2276084061651828676, guid: f7193edc327fb4d498f00daa4ee12f39,
         type: 3}

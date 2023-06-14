@@ -17,7 +17,7 @@ public class Yamez : MonsterFAB
 
     public override void Init()
     {
-        Debug.Log(Mymurdertime + " : " + GameManager.Instance.nightNo);
+        Debug.Log("Yamez's murder time " + Mymurdertime + " : " + GameManager.Instance.nightNo);
         if (Mymurdertime > GameManager.Instance.nightNo)
         {
             model.SetActive(false);
@@ -41,9 +41,6 @@ public class Yamez : MonsterFAB
         eyesClosed = eyes.Length;
         timer = Eyetime;
         Closeeyes();
-        Debug.Log("Yamez is going to wait for " + startingTime);
-        Debug.Log("Yamez is going open eyes in " + Eyetime);
-
     }
 
     public override void Tick(float deltaTime)
@@ -70,6 +67,7 @@ public class Yamez : MonsterFAB
             eyesClosed -= 1;
             eyes[eyesClosed].material.SetTexture("_BaseMap", eyeOpen);
             timer = Random.Range(7 - agression, 8 - agression);
+            Debug.Log("Yamez has " + (6 - eyesClosed) + " eyes open");
         }
         ActionisComing = true;
     }
@@ -84,17 +82,15 @@ public class Yamez : MonsterFAB
 
     public void hereIcome()
     {
-
         currentTime -= Time.deltaTime;
         timer -= Time.deltaTime;
         if (currentTime < 0)
         {
-            Debug.Log(eyecount);
             eyecount -= 1;
             currentTime = Random.Range(7 - agression, 8 - agression); ;
             if (eyecount <= 0)
             {
-                Debug.Log("U DED");
+                Debug.Log("Yamez Killed you");
                 Kill();
             }
             else

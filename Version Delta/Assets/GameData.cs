@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameData : MonoBehaviour
 {
     public static GameData Instance;
-    public int murdertime = 0; //Keeps track of who is about to kill
+    public static int murdertime; //Keeps track of who is about to kill
 
     void Awake()
     {
@@ -16,7 +16,8 @@ public class GameData : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-
-
+    public void SetMurderTime(int i){
+        murdertime = i;
+    }
 
 }
